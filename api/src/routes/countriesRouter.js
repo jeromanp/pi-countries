@@ -2,24 +2,18 @@ const {Router} = require("express")
 //const {Country} = require ("../db")
 
 const  {
-    getAllFroms,
-    getFromById,
+    getAllFromsHandler,
+    getFromByIdHandler,
     //filterFroms,
-} = require("../controllers/countriesController")
+} = require("../handlers/countriesHandlers")
 
 const countriesRouter = Router()
 
 
-countriesRouter.get("/",(req,res)=>{
-    res.send("debera llamar a la funcion getAllFroms");
-})
+countriesRouter.get("/",getAllFromsHandler)
 
-//otra forma de ejecutarla
-//countriesRouter.get("/",getAllFroms)
 
-countriesRouter.get("/:idPais",(req,res)=>{
-    res.send("debera llamar a la funcion getFromById")
-})
+countriesRouter.get("/:idPais",getFromByIdHandler)
 
 // countriesRouter.get("/name=",(req, res)=>{
 //     res.send("debera llamar a la funcion filterFroms")

@@ -1,32 +1,24 @@
 const {Activity} = require ("../db")
 const {Router} = require("express")
 const {
-    createActivity,
-    getActivity,
-    updateActivity,
-    deleteActivity
-} = require ("../controllers/activityController")
+    createActivityHandler,
+    getActivityHandler,
+    updateActivityHandler,
+    deleteActivityHandler
+} = require ("../handlers/activityHandlers")
 
 
 const activityRouter = Router()
 
-activityRouter.post("/",(req, res)=>{
-    res.send("llama a la funcion createActivity");
-})
+activityRouter.post("/",createActivityHandler)
 
 //EXTRA
 
-activityRouter.get("/",(req, res)=>{
-    res.send("llamara a la funcion getActivity");
-})
+activityRouter.get("/",getActivityHandler)
 
-activityRouter.put("/:id", (req, res)=>{
-    res.send("llamara a la funcion updateActivity")
-})
+activityRouter.put("/:id", updateActivityHandler)
 
-activityRouter.delete("/:id", (req, res)=>{
-    res.send("ejecutara la funcion deleteActivity")
-})
+activityRouter.delete("/:id", deleteActivityHandler)
 
 
 
