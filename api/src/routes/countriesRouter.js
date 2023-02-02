@@ -4,7 +4,7 @@ const {Router} = require("express")
 const  {
     getAllFroms,
     getFromById,
-    filterFroms,
+    //filterFroms,
 } = require("../controllers/countriesController")
 
 const countriesRouter = Router()
@@ -21,9 +21,9 @@ countriesRouter.get("/:idPais",(req,res)=>{
     res.send("debera llamar a la funcion getFromById")
 })
 
-countriesRouter.get("/name=",(req, res)=>{
-    res.send("debera llamar a la funcion filterFroms")
-})
+// countriesRouter.get("/name=",(req, res)=>{
+//     res.send("debera llamar a la funcion filterFroms")
+// })
 
 
 //EXTRA
