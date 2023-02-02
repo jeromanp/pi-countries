@@ -17,25 +17,25 @@ module.exports = (sequelize) => {
       },
       difficulty: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         validate: {
           max: 5,
           min: 1,
         },
+        defaultValue:1,
       },
       duration: {
-        type: DataTypes.INTEGER,
-        allowNull: false,        
+        type: DataTypes.INTEGER,               
         validate: {
           min: 1,
           max:31,
         },
+        defaultValue:1,
         //para agregar day a la duracion
         //altera el orden de json
-        // get(){
-        //   const day = this.getDataValue("duration");
-        //   return day ? `${day} day(s)` : null ;
-        // },
+        get(){
+          const day = this.getDataValue("duration");
+          return day ? `${day} day(s)` : null ;
+        },
       },
       season: {
         type: DataTypes.ENUM("Primavera", "Verano", "Otoño", "Invierno"),        
