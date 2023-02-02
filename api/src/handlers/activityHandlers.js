@@ -8,8 +8,11 @@ const {
 const createActivityHandler = async (req, res) => {
   //Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
   //Crea una actividad turística en la base de datos, relacionada con los países correspondientes
+  const { name, difficulty, duration, season } = req.body;
   try {
-    const { name, difficulty, duration, season } = req.body;
+    if(!name || !season){
+        throw Error("Falta enviar datos necesarios")
+    }
     const newActivity = await createActivity(name, difficulty, duration, season);
     res.status(201).json(newActivity)
   } catch (error) {
