@@ -53,7 +53,16 @@ const updateActivity = async (id, name, difficulty, duration, season) => {
   return updatedActivity;
 };
 
-const deleteActivity = () => {};
+
+const deleteActivity = async (id) => {
+  
+  const deleteAct = await Activity.findByPk(id);
+  if (!deleteAct) {
+    throw new Error(`No se encontró la actividad con ID ${id}`);
+  }
+  await deleteAct.destroy();
+  return deleteAct;
+};
 
 module.exports = {
   createActivity,
