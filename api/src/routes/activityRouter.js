@@ -19,9 +19,9 @@ activityRouter.get("/", getActivityHandler)
 
 activityRouter.get("/:id",getActivityByIdHandler)
 
-activityRouter.put("/:id", updateActivityHandler)
+activityRouter.put("/update/:id", updateActivityHandler)
 
-activityRouter.delete("/:id", deleteActivityHandler)
+activityRouter.delete("/delete/:id", deleteActivityHandler)
 
 
 
