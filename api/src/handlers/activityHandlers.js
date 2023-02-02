@@ -55,24 +55,38 @@ const getActivityByIdHandler = async (req, res) => {
 };
 
 const updateActivityHandler = async (req, res) => {
-    const { id } = req.params;
-    const { name, difficulty, duration, season} = req.body;
-    try {
-      const activity = await getActivityById(id);
-      if (!activity) {
-        return res.status(404).json({ error: "Activity not found" });
-      }
-      const updatedActivity = await updateActivity(id, name, difficulty, duration, season);
-      res.status(201).json(updatedActivity);
-    } catch (error) {
-      res.status(400).json({ error: error.message });
+  const { id } = req.params;
+  const { name, difficulty, duration, season } = req.body;
+  try {
+    const activity = await getActivityById(id);
+    if (!activity) {
+      return res.status(404).json({ error: "Activity not found" });
     }
-  };
+    const updatedActivity = await updateActivity(
+      id,
+      name,
+      difficulty,
+      duration,
+      season
+    );
+    res.status(201).json(updatedActivity);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 
+const deleteActivityHandler = async (req, res) => {
+  const { id } = req.params;
+  //   if (!id) {
+  //     return res.status(400).json({ error: "No se proporcionó un ID válido para la actividad a eliminar" });
+  //   }
 
-const deleteActivityHandler = (req, res) => {
-  //Eliminar una actividad con el ID
-  res.send("llamara a controller deleteActivity");
+  try {
+    const delAct = await deleteActivity(id);
+    res.status(201).json({ Se_elimino_la_actividad: delAct });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 module.exports = {
