@@ -31,6 +31,9 @@ const findActivity = async (name) => {
 };
 
 const getActivityById = async (id) => {  
+  if(isNaN(id)){
+    throw Error(`El ${id} no es un numero`)
+}
   const findActivity = await Activity.findByPk(id);
   if(!findActivity){
     throw Error(`No se encontró la actividad con ID ${id}`)
