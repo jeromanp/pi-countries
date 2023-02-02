@@ -30,10 +30,15 @@ const findActivity = async (name) => {
   return results;
 };
 
-const getActivityById = async (id) => {
-  const findActivity = Activity.findByPk(id);
+const getActivityById = async (id) => {  
+  const findActivity = await Activity.findByPk(id);
+  if(!findActivity){
+    throw Error(`No se encontró la actividad con ID ${id}`)
+  }
   return findActivity;
 };
+
+
 
 const updateActivity = async (id, name, difficulty, duration, season) => {
   await Activity.update(
