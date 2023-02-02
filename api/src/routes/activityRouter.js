@@ -1,25 +1,31 @@
 const {Activity} = require ("../db")
 const {Router} = require("express")
+const {
+    createActivity,
+    getActivity,
+    updateActivity,
+    deleteActivity
+} = require ("../controllers/activityController")
 
 
 const activityRouter = Router()
 
 activityRouter.post("/",(req, res)=>{
-    res.send("Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body. Crea una actividad turística en la base de datos, relacionada con los países correspondientes");
+    res.send("llama a la funcion createActivity");
 })
 
 //EXTRA
 
 activityRouter.get("/",(req, res)=>{
-    res.send("Esta ruta me traera las actividades creadas");
+    res.send("llamara a la funcion getActivity");
 })
 
 activityRouter.put("/:id", (req, res)=>{
-    res.send("Modificar una actividad con el ID")
+    res.send("llamara a la funcion updateActivity")
 })
 
 activityRouter.delete("/:id", (req, res)=>{
-    res.send("Eliminar una actividad con el ID")
+    res.send("ejecutara la funcion deleteActivity")
 })
 
 
