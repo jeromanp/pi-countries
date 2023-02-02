@@ -1,6 +1,8 @@
 const {
   createActivity,
   getActivity,
+  findActivity,
+  getActivityById,
   updateActivity,
   deleteActivity,
 } = require("../controllers/activityController");
@@ -10,19 +12,49 @@ const createActivityHandler = async (req, res) => {
   //Crea una actividad turística en la base de datos, relacionada con los países correspondientes
   const { name, difficulty, duration, season } = req.body;
   try {
-    if(!name || !season){
-        throw Error("Falta enviar datos necesarios")
+    if (!name || !season) {
+      throw Error("Falta enviar datos necesarios");
     }
-    const newActivity = await createActivity(name, difficulty, duration, season);
-    res.status(201).json(newActivity)
+    const newActivity = await createActivity(
+      name,
+      difficulty,
+      duration,
+      season
+    );
+    res.status(201).json(newActivity);
   } catch (error) {
-    res.status(400).json({error: error.message});
+    res.status(400).json({ error: error.message });
   }
 };
 
-const getActivityHandler = (req, res) => {
+const getActivityHandler = async (req, res) => {
+  //traer la actividad por nombre o todas las actividades
+  const { name } = req.query;
+  let activity;
+  try {
+    if (name) {
+      activity = await findActivity(name);
+    } else {
+      activity = await getActivity();
+    }
+    res.status(201).json(activity);
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+const getActivityByIdHandler = async (req, res) => {
   //esta funcion traera todas las actividades creadas
-  res.send("llamara a controller getActivity");
+  const { id } = req.params;
+  try {
+    if (!id) {
+    } else {
+      const findAct = await getActivityById(id);
+      res.status(201).json(findAct);
+    }
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
 };
 
 const updateActivityHandler = (req, res) => {
@@ -38,6 +70,7 @@ const deleteActivityHandler = (req, res) => {
 module.exports = {
   createActivityHandler,
   getActivityHandler,
+  getActivityByIdHandler,
   updateActivityHandler,
   deleteActivityHandler,
 };
