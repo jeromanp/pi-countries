@@ -37,7 +37,12 @@ const getActivityById = async (id) => {
 
 const updateActivity = async (id, name, difficulty, duration, season) => {
   await Activity.update(
-    { name: name, difficulty: difficulty, duration: duration, season: season },
+    {
+      name: name,
+      difficulty: difficulty,
+      duration: duration,
+      season: season,
+    },
     {
       where: {
         id: id,
