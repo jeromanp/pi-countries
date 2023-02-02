@@ -3,6 +3,7 @@ const {Router} = require("express")
 const {
     createActivityHandler,
     getActivityHandler,
+    getActivityByIdHandler,
     updateActivityHandler,
     deleteActivityHandler
 } = require ("../handlers/activityHandlers")
@@ -14,7 +15,9 @@ activityRouter.post("/",createActivityHandler)
 
 //EXTRA
 
-activityRouter.get("/",getActivityHandler)
+activityRouter.get("/", getActivityHandler)
+
+activityRouter.get("/:id",getActivityByIdHandler)
 
 activityRouter.put("/:id", updateActivityHandler)
 
