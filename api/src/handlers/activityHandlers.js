@@ -47,20 +47,28 @@ const getActivityByIdHandler = async (req, res) => {
   //esta funcion traera todas las actividades creadas
   const { id } = req.params;
   try {
-    if (!id) {
-    } else {
-      const findAct = await getActivityById(id);
-      res.status(201).json(findAct);
-    }
+    const findAct = await getActivityById(id);
+    res.status(201).json(findAct);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-const updateActivityHandler = (req, res) => {
-  //Modificara una determinada actividad pasada por ID
-  res.send("llamara a controller updateActivity");
-};
+const updateActivityHandler = async (req, res) => {
+    const { id } = req.params;
+    const { name, difficulty, duration, season} = req.body;
+    try {
+      const activity = await getActivityById(id);
+      if (!activity) {
+        return res.status(404).json({ error: "Activity not found" });
+      }
+      const updatedActivity = await updateActivity(id, name, difficulty, duration, season);
+      res.status(201).json(updatedActivity);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  };
+
 
 const deleteActivityHandler = (req, res) => {
   //Eliminar una actividad con el ID
