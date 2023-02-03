@@ -10,12 +10,12 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-      },
+      },  
       country: {
         type: DataTypes.STRING,
         allowNull: false,
-      },
-      name_activity: {
+      },     
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },      
@@ -40,11 +40,12 @@ module.exports = (sequelize) => {
           const day = this.getDataValue("duration");
           return day ? `${day} day(s)` : null ;
         },
-      },
+      },      
       season: {
         type : DataTypes.ENUM("Primavera", "Verano", "Otoño", "Invierno")          
       },
+      
     },
-    //{ timestamps: false }
+    { timestamps: false }
   );
 };
