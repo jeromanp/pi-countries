@@ -5,8 +5,9 @@ const { Op } = require("sequelize");
 //me da una promesa y con el async-await indico que me espere a que se resuelva esa promesa
 //Activity.create es una promesa
 
-const createActivity = async (name, difficulty, duration, season) => {
+const createActivity = async (country, name, difficulty, duration, season) => {
   const newActivity = await Activity.create({
+    country,
     name,
     difficulty,
     duration,
@@ -43,9 +44,10 @@ const getActivityById = async (id) => {
 
 
 
-const updateActivity = async (id, name, difficulty, duration, season) => {
+const updateActivity = async (id,country, name, difficulty, duration, season) => {
   await Activity.update(
     {
+      country:country,
       name: name,
       difficulty: difficulty,
       duration: duration,
