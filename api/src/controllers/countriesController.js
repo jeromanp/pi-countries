@@ -24,13 +24,23 @@ const showApiValues = (array) => {
     });
   };
 
+// const getDataApi = async () => {
+//   const dataApi = (await axios.get(url)).data;
+//   await Country.bulkCreate(showApiValues(dataApi));
+//   return dataApi;
+// };
+// getDataApi();
+
 //funcion que solicita la info a la api y guarda en la bdd
-//se autoejecuta
-(async function(){
+let dataFetched = false;
+//se autoejecuta 1 sola vez
+(async function getDataApi() {
+    if (dataFetched) return;
     const dataApi = (await axios.get(url)).data;
     await Country.bulkCreate(showApiValues(dataApi));
+    dataFetched = true;
     return dataApi;
-  })()
+    })();
 
 
 //funcion que me retornara todos los countries
