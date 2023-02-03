@@ -11,10 +11,14 @@ module.exports = (sequelize) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      country: {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      name_activity: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },      
       difficulty: {
         type: DataTypes.INTEGER,
         validate: {
@@ -38,10 +42,9 @@ module.exports = (sequelize) => {
         },
       },
       season: {
-        type: DataTypes.ENUM("Primavera", "Verano", "Otoño", "Invierno"),        
-        allowNull: false,
+        type : DataTypes.ENUM("Primavera", "Verano", "Otoño", "Invierno")          
       },
     },
-    { timestamps: false }
+    //{ timestamps: false }
   );
 };
