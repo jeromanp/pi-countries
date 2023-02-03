@@ -10,12 +10,13 @@ const {
 const createActivityHandler = async (req, res) => {
   //Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
   //Crea una actividad turística en la base de datos, relacionada con los países correspondientes
-  const { name, difficulty, duration, season } = req.body;
+  const { country, name, difficulty, duration, season } = req.body;
   try {
     if (!name || !season) {
       throw Error("Falta enviar datos necesarios");
     }
     const newActivity = await createActivity(
+      country,
       name,
       difficulty,
       duration,
@@ -56,7 +57,7 @@ const getActivityByIdHandler = async (req, res) => {
 
 const updateActivityHandler = async (req, res) => {
   const { id } = req.params;
-  const { name, difficulty, duration, season } = req.body;
+  const { country, name, difficulty, duration, season } = req.body;
   try {
     const activity = await getActivityById(id);
     if (!activity) {
@@ -64,6 +65,7 @@ const updateActivityHandler = async (req, res) => {
     }
     const updatedActivity = await updateActivity(
       id,
+      country,
       name,
       difficulty,
       duration,
