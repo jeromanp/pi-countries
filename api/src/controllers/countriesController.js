@@ -4,6 +4,9 @@ const axios = require("axios");
 const { Op } = require("sequelize");
 
 const url = "https://restcountries.com/v3/all";
+//const dataApi = {allCountries:null}
+
+
 
 //funcion que me mostrara que valores quiero en la bdd
 const showApiValues = (array) => {
@@ -11,6 +14,7 @@ const showApiValues = (array) => {
     return {
       id: element.cca3,
       name: element.name.common,
+      continent:element.continents,
       capital: element.capital
         ? element.capital[0]
         : "Este pais no tiene capital.",
@@ -34,18 +38,21 @@ const showApiValues = (array) => {
 //funcion que solicita la info a la api y guarda en la bdd
 let dataFetched = false;
 //se busca que se ejecute una sola vez
-(async function getDataApi() {
+const getDataApi = async () => {
   if (!dataFetched) {
     const dataApi = (await axios.get(url)).data;
     await Country.bulkCreate(showApiValues(dataApi));
     dataFetched = true;
-    //return dataApi;
+    return dataApi;
   }
-})();
+};
+getDataApi()
 
 //funcion que me retornara todos los countries
 const getAllCountries = async () => {
-  return await Country.findAll();
+  return await Country.findAll({
+    attributes: ['name', 'continent']
+  });
 };
 
 //funcion que retornara las coincidencias obtenidas por name
