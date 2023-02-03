@@ -25,13 +25,7 @@ const showApiValues = (array) => {
   };
 
 //funcion que solicita la info a la api y guarda en la bdd
-// const getDataApi = async () => {
-//   const dataApi = (await axios.get(url)).data;
-//   await Country.bulkCreate(showApiValues(dataApi));
-//   return dataApi;
-// };
-// //ejecucion de la funcion que guardara los datos de la api
-// getDataApi();
+//se autoejecuta
 (async function(){
     const dataApi = (await axios.get(url)).data;
     await Country.bulkCreate(showApiValues(dataApi));
