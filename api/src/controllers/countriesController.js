@@ -66,13 +66,12 @@ const findCountryByName = async (name) => {
   };
 
 const getCountryById = async (id) => {
-  if (isNaN(id)) {
-    throw Error(`El ${id} no es un numero`);
-  }
-  const findCountry = Country.findByPk(id);
+  const findCountry = await Country.findByPk(id);
   if (!findCountry) {
-    throw Error(`No se encontró la actividad con ID ${id}`);
+    throw Error(`No se encontró el country con ID ${id}`);
   }
+  
+
   return findCountry;
 };
 
