@@ -13,7 +13,7 @@ const countriesRouter = Router()
 countriesRouter.get("/",getAllCountriesHandler)
 
 
-countriesRouter.get("/:idPais",getCountryByIdHandler)
+countriesRouter.get("/:id",getCountryByIdHandler)
 
 // countriesRouter.get("/name=",(req, res)=>{
 //     res.send("debera llamar a la funcion filterFroms")
