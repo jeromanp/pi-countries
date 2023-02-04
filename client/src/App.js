@@ -7,11 +7,11 @@ import NavBar from "./components/NavBar/NavBar";
 import { Route, useLocation } from "react-router-dom";
 
 function App() {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   return (
     <div className="App">
-      {pathname !== "/" && <NavBar />}
+      {location.pathname !== "/" && <NavBar />}
       <Route exact path="/" component={Landindg} />
       <Route path="/home" render={() => <Home />} />
       <Route path="/detail" component={Detail} />
