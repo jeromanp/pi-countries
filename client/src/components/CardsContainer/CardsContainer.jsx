@@ -11,6 +11,7 @@ const CardsContainer = () => {
         return (
           <Card
             key={country.id}
+            id={country.id}
             name={country.name}
             continent={country.continent}
             flag={country.flag}
