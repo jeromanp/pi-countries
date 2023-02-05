@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_COUNTRIES, GET_COUNTRY } from "./type_actions"
+import { GET_COUNTRIES, GET_COUNTRY, SEARCH_NAME } from "./type_actions"
 
 export function getCountries () {
     return async function (dispatch){
@@ -21,6 +21,17 @@ export function getCountry (id) {
         dispatch({
             type:GET_COUNTRY,
             payload:country
+        })
+    }
+}
+
+export function searchCountry (name){
+    return async function(dispatch){
+        const apiData = await axios.get(`http://localhost:3001/countries?name=${name}`)
+        const search = apiData.data
+        dispatch({
+            type:SEARCH_NAME,
+            payload:search
         })
     }
 }
