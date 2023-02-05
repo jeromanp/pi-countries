@@ -1,0 +1,14 @@
+.container{
+    border: 1px solid black;
+    display: grid;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap:1em;
+    background-color: rgba(11, 104, 104, 0.827);
+    margin: 5%;
+}
+
+.container img{
+    width: 500px;
+    height: auto;
+}
