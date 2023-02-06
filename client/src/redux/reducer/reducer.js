@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRY, SEARCH_NAME, ORDER_COUNTRIES } from "../actions/type_actions"
+import { GET_COUNTRIES, GET_COUNTRY, SEARCH_NAME, ORDER_COUNTRIES, FILTER_CONTINENTS } from "../actions/type_actions"
 
 const initialState = {
   countries: [],  
@@ -26,7 +26,11 @@ const rootReducer = (state = initialState, action) => {
             return 0
           }
         })
-        return { ...state, countries:order }        
+        return { ...state, countries:order }  
+      case FILTER_CONTINENTS:
+        const filterContinent = [ ...state.countries]
+        const filterByCountries = filterContinent.filter((country)=>country.continent === action.payload)
+        return { ...state, countries:filterByCountries}      
     default:
       return { ...state };
   }
