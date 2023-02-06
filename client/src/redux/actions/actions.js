@@ -27,11 +27,20 @@ export function getCountry (id) {
 
 export function searchCountry (name){
     return async function(dispatch){
-        const apiData = await axios.get(`http://localhost:3001/countries?name=${name}`)
-        const search = apiData.data
-        dispatch({
-            type:SEARCH_NAME,
-            payload:search
-        })
+        try {
+            const apiData = await axios.get(`http://localhost:3001/countries?name=${name}`)
+            const search = apiData.data
+            dispatch({
+                type:SEARCH_NAME,
+                payload:search
+            })
+        } catch (error) {
+            alert(error.response.data.error)
+        }
     }
 }
+
+
+
+
+
