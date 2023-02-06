@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchCountry, orderCountries, filterContinent } from "../../redux/actions/actions";
+import {
+  searchCountry,
+  orderCountries,
+  filterContinent,
+} from "../../redux/actions/actions";
 
 const SearchCountry = () => {
   const dispatch = useDispatch();
@@ -22,8 +26,8 @@ const SearchCountry = () => {
     if (name === "Order") {
       return dispatch(orderCountries(value));
     }
-    if(name === "Filter Continent"){
-        return dispatch(filterContinent(value))
+    if (name === "Filter Continent") {
+      return dispatch(filterContinent(value));
     }
   }
 
@@ -35,11 +39,7 @@ const SearchCountry = () => {
         <button onClick={handleClick}>Search</button>
       </div>
 
-      <select
-        name="Order"
-        defaultValue={"Default"}
-        onChange={handleSelect}
-      >
+      <select name="Order" defaultValue={"Default"} onChange={handleSelect}>
         <option value="Default" disabled>
           Select Order
         </option>
@@ -49,20 +49,21 @@ const SearchCountry = () => {
       </select>
 
       <select
-              name="Filter Continent"
-              defaultValue={"Default"}
-              onChange={handleSelect}
-            >
-              <option value="Default" disabled>
-                Select Filter
-              </option>
-              <option value="Africa">Africa</option>
-              <option value="Asia">Asia</option>
-              <option value="Europe">Europe</option>
-              <option value="North America">North America</option>
-              <option value="Oceania">Oceania</option>
-              <option value="South America">South America</option>
-            </select>
+        name="Filter Continent"
+        defaultValue={"Default"}
+        onChange={handleSelect}
+      >
+        <option value="Default" disabled>
+          Select Continent
+        </option>
+        <option value="All">All</option>
+        <option value="Africa">Africa</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="North America">North America</option>
+        <option value="Oceania">Oceania</option>
+        <option value="South America">South America</option>
+      </select>
     </div>
   );
 };
