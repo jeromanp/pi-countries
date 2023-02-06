@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_COUNTRIES, GET_COUNTRY, ORDER_COUNTRIES, SEARCH_NAME } from "./type_actions"
+import { GET_COUNTRIES, GET_COUNTRY, ORDER_COUNTRIES, SEARCH_NAME, FILTER_CONTINENTS } from "./type_actions"
 
 export function getCountries () {
     return async function (dispatch){
@@ -44,6 +44,13 @@ export function orderCountries (order) {
     return {
         type:ORDER_COUNTRIES,
         payload:order
+    }
+}
+
+export function filterContinent (continent){
+    return {
+        type: FILTER_CONTINENTS,
+        payload:continent
     }
 }
 
