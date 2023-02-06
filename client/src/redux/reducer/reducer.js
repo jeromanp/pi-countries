@@ -1,7 +1,8 @@
-import { GET_COUNTRIES, GET_COUNTRY, SEARCH_NAME } from "../actions/type_actions"
+import { GET_COUNTRIES, GET_COUNTRY, SEARCH_NAME, ORDER_COUNTRIES } from "../actions/type_actions"
 
 const initialState = {
   countries: [],  
+  
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -12,6 +13,20 @@ const rootReducer = (state = initialState, action) => {
         return { ...state, country:action.payload}
     case SEARCH_NAME:       
         return {...state, countries:action.payload}
+    case ORDER_COUNTRIES:
+        const orderCountries = [...state.countries]
+        const order = orderCountries.sort((a,b)=>{
+          if(a.id > b.id){
+            return "Ascendente" === action.payload ? 1 : -1
+          }
+          if((a.id < b.id)){
+            return "Descendente" === action.payload ? 1 : -1
+          }
+          else{
+            return 0
+          }
+        })
+        return { ...state, countries:order }        
     default:
       return { ...state };
   }
