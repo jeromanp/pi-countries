@@ -2,7 +2,7 @@ import { GET_COUNTRIES, GET_COUNTRY, SEARCH_NAME, ORDER_COUNTRIES, FILTER_CONTIN
 
 const initialState = {
   countries: [],  
-  
+  countriesCopy:[]
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -14,7 +14,8 @@ const rootReducer = (state = initialState, action) => {
     case SEARCH_NAME:       
         return {...state, countries:action.payload}
     case ORDER_COUNTRIES:
-        const orderCountries = [...state.countries]
+        state.countriesCopy = [...state.countries]
+        const orderCountries = [...state.countriesCopy]
         const order = orderCountries.sort((a,b)=>{
           if(a.id > b.id){
             return "Ascendente" === action.payload ? 1 : -1
@@ -28,7 +29,7 @@ const rootReducer = (state = initialState, action) => {
         })
         return { ...state, countries:order }  
       case FILTER_CONTINENTS:
-        const filterContinent = [ ...state.countries]
+        const filterContinent = [ ...state.countriesCopy]
         const filterByCountries = filterContinent.filter((country)=>country.continent === action.payload)
         return { ...state, countries:filterByCountries}      
     default:
