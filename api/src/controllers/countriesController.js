@@ -67,7 +67,7 @@ const findCountryByName = async (name) => {
   const apiCountries = await Country.findAll();
   const filteredCountries = filterByName(apiCountries, name);
   if (filteredCountries.length === 0) {
-    throw Error(`No se encuentran coincidencias con el NAME = ${name}`);
+    throw Error(`No se encuentran coincidencias con el NAME ${name}`);
   }
   return [...filteredCountries];
 };
