@@ -58,7 +58,7 @@ const getAllCountries = async () => {
 //funcion que retornara las coincidencias obtenidas por name
 const filterByName = (countries, name) => {
   return countries.filter((country) =>
-    country.name.toLowerCase().includes(name.toLowerCase())
+    country.name.toLowerCase().startsWith(name.toLowerCase())
   );
 };
 
