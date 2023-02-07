@@ -1,0 +1,10 @@
+.warning {
+    border: solid rgb(255, 0, 0) 1px;
+    border-radius: 0.2em;
+  }
+  
+  .danger {
+    font-size: 10px;
+    color: rgb(255, 0, 0);
+    margin-left: 10em;
+  }
