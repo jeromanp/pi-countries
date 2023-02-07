@@ -34,11 +34,15 @@ const showApiValues = (array) => {
 let dataFetched = false;
 //se busca que se ejecute una sola vez
 const getDataApi = async () => {
-  if (!dataFetched) {
-    const dataApi = (await axios.get(url)).data;
-    await Country.bulkCreate(showApiValues(dataApi));
-    dataFetched = true;
-    return dataApi;
+  try {
+    if (!dataFetched) {
+      const dataApi = (await axios.get(url)).data;
+      await Country.bulkCreate(showApiValues(dataApi));
+      dataFetched = true;
+      return dataApi;
+    }    
+  } catch (error) {
+    console.error(error);   
   }
 };
 getDataApi()
