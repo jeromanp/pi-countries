@@ -4,6 +4,7 @@ import Landindg from "./components/Landing/Landing";
 import Form from "./components/Form/Form";
 import Detail from "./components/Detail/Detail";
 import NavBar from "./components/NavBar/NavBar";
+import About from "./components/About/About";
 import { Route, useLocation } from "react-router-dom";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/home" render={() => <Home />} />
       <Route path="/detail/:id"  component={Detail} />
       <Route path="/activities" component={Form} />
+      <Route path="/about" component={About} />
     </div>
   );
 }
