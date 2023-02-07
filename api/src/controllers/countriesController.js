@@ -51,7 +51,7 @@ getDataApi()
 //funcion que me retornara todos los countries
 const getAllCountries = async () => {
   return await Country.findAll({
-    attributes: ['id','name', 'continent', 'flag']
+    attributes: ['id','name', 'continent', 'flag', 'capital','subregion', 'area', 'population']
   });
 };
 
