@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   searchCountry,
-  orderCountries,
-  filterContinent,
+  orderAlphabetic,
+  filterContinents,
+  orderPopulation,
+  resetState,
 } from "../../redux/actions/actions";
 
 const SearchCountry = () => {
@@ -23,30 +25,32 @@ const SearchCountry = () => {
     event.preventDefault();
     const { name, value } = event.target;
 
-    if (name === "Order") {
-      return dispatch(orderCountries(value));
-    }
     if (name === "Filter Continent") {
-      return dispatch(filterContinent(value));
+      dispatch(filterContinents(value));
+      dispatch(resetState())
+    }
+    if (name === "Order Alphabetic") {
+      return dispatch(orderAlphabetic(value));
+    }
+    if (name === "Order Population") {
+      return dispatch(orderPopulation(value));
     }
   }
+//   const continentsFilter = function (e) {
+//     // resetState()
+//     filterContinents(e.target.value);
+//     //console.log(filterContinents(e.target.value));
+//   };
 
   return (
     <div>
       <div>
+        <button onClick={() => dispatch(resetState())}>Clear Filters</button>
+
         <h1>Buscando Country</h1>
         <input type="text" value={searchName} onChange={handleSearch} />
         <button onClick={handleClick}>Search</button>
       </div>
-
-      <select name="Order" defaultValue={"Default"} onChange={handleSelect}>
-        <option value="Default" disabled>
-          Select Order
-        </option>
-
-        <option value="Ascendente">Ascendente</option>
-        <option value="Descendente">Descendente</option>
-      </select>
 
       <select
         name="Filter Continent"
@@ -64,8 +68,33 @@ const SearchCountry = () => {
         <option value="Oceania">Oceania</option>
         <option value="South America">South America</option>
       </select>
+
+      <select
+        name="Order Alphabetic"
+        defaultValue={"Default"}
+        onChange={handleSelect}
+      >
+        <option value="Default" disabled>
+          Select Alphabetic Order
+        </option>
+
+        <option value="AZ">AZ</option>
+        <option value="ZA">ZA</option>
+      </select>
+
+      <select
+        name="Order Population"
+        defaultValue={"Default"}
+        onChange={handleSelect}
+      >
+        <option value="Default" disabled>
+          Select Population Order
+        </option>
+
+        <option value="Higher Population">Higher Population</option>
+        <option value="Lower Population">Lower Population</option>
+      </select>
     </div>
   );
 };
-
 export default SearchCountry;
