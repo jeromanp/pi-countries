@@ -50,10 +50,10 @@ export function searchCountry(name) {
   };
 }
 
-export function filterContinents(payload) {
+export function filterContinents(data) {
   return {
     type: FILTER_CONTINENTS,
-    payload,
+    payload:data
   };
 }
 
