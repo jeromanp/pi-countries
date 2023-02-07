@@ -4,12 +4,9 @@ export const SEARCH_NAME = "SEACH_NAME"
 export const ORDER_COUNTRIES = "ORDER_COUNTRIES"
 export const FILTER_CONTINENTS = "FILTER_CONTINENTS"
 export const RESET_FILTERS = "RESET_FILTERS"
+export const ORDER_ALPHABETICAL = "ORDER_ALPHABETICAL"
 
 
 
 
-// export const ADD_FAVORITE = "ADD_FAVORITE"
-// export const DELETE_FAVORITE = "DELETE_FAVORITE"
-// export const FILTER = "FILTER"
-// export const ORDER = "ORDER"
-// export const RESET = "RESET"
+
