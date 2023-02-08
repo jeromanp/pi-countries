@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
   searchCountry,
@@ -10,8 +10,18 @@ import {
 
 const SearchCountry = () => {
   const dispatch = useDispatch();
-
   const [searchName, setSearchName] = useState("");
+
+  const [selectedContinent, setSelectedContinent] = useState();
+
+  useEffect(() => {
+    dispatch(filterContinents(selectedContinent));
+    dispatch(resetState());
+  }, [selectedContinent, dispatch]);
+
+  const continet = (e) => {
+    dispatch(filterContinents(e.target.value));
+  };
 
   const handleSearch = (e) => {
     setSearchName(e.target.value);
@@ -26,8 +36,7 @@ const SearchCountry = () => {
     const { name, value } = event.target;
 
     if (name === "Filter Continent") {
-      dispatch(filterContinents(value));
-      dispatch(resetState())
+      setSelectedContinent(value);
     }
     if (name === "Order Alphabetic") {
       return dispatch(orderAlphabetic(value));
@@ -36,11 +45,6 @@ const SearchCountry = () => {
       return dispatch(orderPopulation(value));
     }
   }
-//   const continentsFilter = function (e) {
-//     // resetState()
-//     filterContinents(e.target.value);
-//     //console.log(filterContinents(e.target.value));
-//   };
 
   return (
     <div>
@@ -48,19 +52,23 @@ const SearchCountry = () => {
         <button onClick={() => dispatch(resetState())}>Clear Filters</button>
 
         <h1>Buscando Country</h1>
-        <input type="text" value={searchName} onChange={handleSearch} />
+        <input
+          type="text"
+          value={searchName}
+          onChange={handleSearch}
+          placeholder="Name of Country"
+        />
         <button onClick={handleClick}>Search</button>
       </div>
 
       <select
         name="Filter Continent"
         defaultValue={"Default"}
-        onChange={handleSelect}
+        onChange={continet}
       >
         <option value="Default" disabled>
           Select Continent
         </option>
-        <option value="All">All</option>
         <option value="Africa">Africa</option>
         <option value="Asia">Asia</option>
         <option value="Europe">Europe</option>
