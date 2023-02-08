@@ -1,10 +1,17 @@
-.mainContainer{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border-radius: 15px;
-    border: 1px solid black;
-    /* agregar el background para ver que es lo que se manipula */
-    /* background-color: brown; */
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: lightgray;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+    margin: 5px 120px;
+  }
 
-}
+  a:hover {
+    cursor: pointer;
+  }
