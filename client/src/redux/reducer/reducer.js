@@ -6,11 +6,14 @@ import {
   FILTER_CONTINENTS,
   RESET_STATE,
   ORDER_POPULATION,
+  FILTER_BY_ACTIVITY,
+  GET_ALL_ACTIVITIES
 } from "../actions/type_actions";
 
 const initialState = {
   countries: [],
   countriesCopy: [],
+  filterCountries:[]
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -28,14 +31,13 @@ const rootReducer = (state = initialState, action) => {
       const countriesCopy = [...state.countries];
       console.log("PREV",countriesCopy);
       const filteredCountries = countriesCopy.filter(country => country.continent === action.payload)
-      console.log("RESULT",action.payload, filteredCountries);
-      console.log("COPY",countriesCopy);
+      //console.log("RESULT",action.payload, filteredCountries);
+      //console.log("COPY",countriesCopy);
       return {
         ...state,
         countries: filteredCountries,
         countriesCopy: countriesCopy        
-      };
-      
+      };      
 
     case ORDER_ALPHABETIC:
       const countriesAlpha = [...state.countries];
@@ -81,10 +83,19 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         countries: filterPopulation,
       };
+    
+    case FILTER_BY_ACTIVITY:
+      return{
+        ...state,
+        countries: action.payload
+      }
+      case GET_ALL_ACTIVITIES:
+        return { ...state, countries: action.payload };
+            
 
     case RESET_STATE:
       const init = [...state.countriesCopy];
-      console.log("INIT", init);
+      //console.log("INIT", init);
       return { ...state, countries: init };
 
     default:
