@@ -29,6 +29,9 @@ const findActivity = async (name) => {
       name: { [Op.iLike]: `%${name}%` },
     },
   });
+  if (results.length === 0) {
+    throw Error(`No se encuentran coincidencias con el NAME ${name}`);
+  }
   return results;
 };
 
