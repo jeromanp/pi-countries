@@ -1,5 +1,5 @@
 //estas funcion interactuan con el modelo de sequelize
-const { Activity } = require("../db");
+const { Activity, Country } = require("../db");
 const { Op } = require("sequelize");
 
 //me da una promesa y con el async-await indico que me espere a que se resuelva esa promesa
@@ -19,7 +19,16 @@ const createActivity = async (country, name, difficulty, duration, season) => {
 
 const getActivity = async () => {
   //traer todas las actividades o una en especifico hallada por nombre
-  const allActi = await Activity.findAll();
+  const allActi = await Activity.findAll({
+    include:{
+      model:Country,
+      attributes:["id","name"],
+      through:{
+        //eliminar tabla intermedia
+        attributes:[],
+      }
+    }
+  });
   return allActi;
 };
 
