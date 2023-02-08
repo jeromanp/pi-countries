@@ -32,17 +32,17 @@ module.exports = (sequelize) => {
       },
       area: {
         type: DataTypes.INTEGER,
-        get(){
-          const km = this.getDataValue("area");
-          return km ? `${km} km2` : null ;
-        },
+        // get(){
+        //   const km = this.getDataValue("area");
+        //   return km ? `${km} km2` : null ;
+        // },
       },
       population: {
         type: DataTypes.INTEGER,
-        get(){
-          const hab = this.getDataValue("population");
-          return hab ? `${hab} approximate population` : null ;
-        },
+        // get(){
+        //   const hab = this.getDataValue("population");
+        //   return hab ? `${hab} approximate population` : null ;
+        // },
       },
     },
     { timestamps: false }
