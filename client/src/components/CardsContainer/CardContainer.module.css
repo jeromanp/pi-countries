@@ -1,4 +1,4 @@
-.container{
+/* .container{
     border: 1px solid black;
     display: flex;
     flex-direction: row;
@@ -6,4 +6,26 @@
     flex-wrap: wrap;
     gap:1em;
     margin: 5%;
-}
+    align-items: center;    
+} */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
