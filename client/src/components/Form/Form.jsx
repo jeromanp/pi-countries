@@ -73,13 +73,12 @@ function validate(inputs) {
         [property]: value,
       })
     );
-    console.log(Form);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     axios.post("http://localhost:3001/activities",form)
-    .then(res=>alert("Se creo la actividad: ",res))
+    .then(res=>alert(`Se creo la actividad`))
     .catch(error=>alert(error))
 
     if (Object.keys(error).length === 0) {
