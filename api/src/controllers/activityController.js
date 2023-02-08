@@ -13,6 +13,7 @@ const createActivity = async (country, name, difficulty, duration, season) => {
     duration,
     season,
   });
+  await newActivity.addCountry(country)
   return newActivity;
 };
 
