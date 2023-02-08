@@ -1,4 +1,4 @@
-//import "./App.css";
+import style from "./App.module.css"
 import Home from "./components/Homes/Home";
 import Landindg from "./components/Landing/Landing";
 import Form from "./components/Form/Form";
@@ -11,7 +11,7 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="App">
+    <div className={style.container}>
       {location.pathname !== "/" && <NavBar />}
       <Route exact path="/" component={Landindg} />
       <Route path="/home" render={() => <Home />} />

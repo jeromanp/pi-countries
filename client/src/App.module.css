@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+body{
+  background-image: url("./images/47972-mapa-mundi.jpg");
+  background-size:cover;
+  background-position: center;
+  background-repeat: repeat-y;
+  height: 100vh;
+}
