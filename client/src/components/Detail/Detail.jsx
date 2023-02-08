@@ -31,11 +31,12 @@ const Detail = (props) => {
       <h1>Estoy en Detail</h1>
       {country && <img src={country.flag} alt={country.name + " flag"} />}
       {country && <p>ID: {country.id}</p>}
-      {country && <p>Name={country.name} </p>}
+      {country && <p>Name: {country.name} </p>}
       {country && <p>Capital: {country.capital}</p>}
       {country && <p>Subregion: {country.subregion} </p>}
-      {country && <p>Area: {country.area} </p>}
-      {country && <p>Population: {country.population} </p>}
+      {country && <p>Area: {country.area} km<sup>2</sup>
+ </p>}
+      {country && <p>Population: {country.population} aprox. </p>}
       </div>
     </div>
   );
