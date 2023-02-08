@@ -27,13 +27,13 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_CONTINENTS:
       const countriesCopy = [...state.countries];
       console.log("PREV",countriesCopy);
-      const filteredCountries = countriesCopy.filter(country => country.continent.includes(action.payload))
+      const filteredCountries = countriesCopy.filter(country => country.continent === action.payload)
       console.log("RESULT",action.payload, filteredCountries);
+      console.log("COPY",countriesCopy);
       return {
         ...state,
         countries: filteredCountries,
-        countriesCopy: countriesCopy
-        
+        countriesCopy: countriesCopy        
       };
       
 
@@ -84,9 +84,8 @@ const rootReducer = (state = initialState, action) => {
 
     case RESET_STATE:
       const init = [...state.countriesCopy];
-      // console.log("RESET", init);
-      console.log(init);
-      return { ...state, countries: state.countries };
+      console.log("INIT", init);
+      return { ...state, countries: init };
 
     default:
       return { ...state };
