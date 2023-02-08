@@ -31,18 +31,10 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
       },
       area: {
-        type: DataTypes.INTEGER,
-        // get(){
-        //   const km = this.getDataValue("area");
-        //   return km ? `${km} km2` : null ;
-        // },
+        type: DataTypes.INTEGER,        
       },
       population: {
-        type: DataTypes.INTEGER,
-        // get(){
-        //   const hab = this.getDataValue("population");
-        //   return hab ? `${hab} approximate population` : null ;
-        // },
+        type: DataTypes.INTEGER,       
       },
     },
     { timestamps: false }
