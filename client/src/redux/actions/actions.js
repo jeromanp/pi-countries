@@ -7,6 +7,8 @@ import {
   ORDER_ALPHABETIC,
   RESET_STATE,
   ORDER_POPULATION,
+  FILTER_BY_ACTIVITY,
+  GET_ALL_ACTIVITIES,
 } from "./type_actions";
 
 export function getCountries() {
@@ -15,6 +17,7 @@ export function getCountries() {
     //const apiData = await axios.get("https://jsonplaceholder.typicode.com/users")
     //para ver si trabaja bien redux
     const countries = apiData.data;
+    // console.log(countries);
     dispatch({
       type: GET_COUNTRIES,
       payload: countries,
@@ -53,7 +56,7 @@ export function searchCountry(name) {
 export function filterContinents(data) {
   return {
     type: FILTER_CONTINENTS,
-    payload:data
+    payload: data,
   };
 }
 
@@ -70,9 +73,46 @@ export function orderAlphabetic(payload) {
   };
 }
 
-export function orderPopulation (orderAlpha){
-    return{
-        type:ORDER_POPULATION,
-        payload:orderAlpha
-    }
+export function orderPopulation(orderAlpha) {
+  return {
+    type: ORDER_POPULATION,
+    payload: orderAlpha,
+  };
 }
+
+export function getAllActivity(){
+  return async function(dispatch){
+    try {
+      const apiData = await axios.get("http://localhost:3001/activities")
+      const result = apiData.data
+      console.log(result);
+      dispatch({
+        type:GET_ALL_ACTIVITIES,
+        payload:result
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  }
+}
+
+export function filterByActivity(name) {
+  return async function (dispatch) {
+    try {
+      const apiData = await axios.get(
+        `http://localhost:3001/activities?name=${name}`
+      );
+      const search = apiData.data;     
+      console.log(search);
+      
+      dispatch({
+        type: FILTER_BY_ACTIVITY,
+        payload: search,
+      });
+    } catch (error) {
+      alert(error.response.data.error);
+    }
+  };
+}
+
+
