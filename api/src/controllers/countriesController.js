@@ -1,12 +1,21 @@
 //estas funcion interactuan con el modelo de sequelize
-const { Country } = require("../db");
+const { Country, Activity } = require("../db");
 const { Op } = require("sequelize");
 const {sequelize} = require ("../db")
 
 //funcion que me retornara todos los countries
 const getAllCountries = async () => {
   return await Country.findAll({
-    attributes: ['id','name', 'continent', 'flag', 'capital','subregion', 'area', 'population']
+    include:{
+      model:Activity,
+      //atributos Model en este caso Activity
+      attributes:["id","name"],
+      through:{
+        //eliminar tabla intermedia
+        attributes:[],
+      }
+    },
+    attributes: ['id','name', 'continent', 'flag', 'capital','subregion', 'area', 'population'],    
   });
 };
 
