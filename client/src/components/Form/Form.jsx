@@ -1,34 +1,29 @@
 import axios from "axios";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-
-
 
 const Form = () => {
-  const countries = useSelector((state) => state.countries);
-
-// console.log(countries);
 
 ////////////////
 
 function validate(inputs) {
     const errors = {};
-    const lettersOnly = /^[a-zA-Z]+$/;
-    const validateCountry = countries.find(c=>c.name === inputs.country)
+    const lettersOnly = /^[a-zA-Z,]+$/;
+    const letterAndCo = /^[a-zA-Z]+$/
 
-    if (!inputs.country) {
-      errors.country = "Se requiere un country";
-    } else if (!lettersOnly.test(inputs.country)) {
-      errors.country = "El country debe tener solo letras";
+    if (!inputs.country.length) {
+      errors.country = "Se requiere al menos un country";
+    } else {
+      inputs.country.forEach((country, index) => {
+        if (!lettersOnly.test(country)) {
+          errors[`country${index}`] = "El country debe tener solo letras";
+        }
+      });
     }
-    else if(!validateCountry){
-     console.log(validateCountry);
-      errors.country = "El name del country no es valido"
-    } 
+ 
     
-    else if (!inputs.name) {
+    if (!inputs.name) {
       errors.name = "Se requiere un nombre de la actividad";
-    } else if (!lettersOnly.test(inputs.name)) {
+    } else if (!letterAndCo.test(inputs.name)) {
       errors.name = "El name debe tener solo letras";
     } else if (inputs.difficulty < 1 || inputs.difficulty > 5) {
       errors.difficulty = "La dificultad de la actividad debe estar entre 1 y 5";
@@ -38,13 +33,12 @@ function validate(inputs) {
     } else if (!inputs.season) {
       errors.season = "Se debe agregar la estacion del año";
     }
-    // console.log(errors);
     return errors;
   }
 ///////////////
 
   const [form, setForm] = useState({
-    country: "",
+    country: [],
     name: "",
     difficulty: 0,
     duration: 0,
@@ -52,7 +46,7 @@ function validate(inputs) {
   });
 
   const [error, setError] = useState({
-    country: "",
+    country: [],
     name: "",
     difficulty: "",
     duration: "",
@@ -61,7 +55,10 @@ function validate(inputs) {
 
   function handleChange(event) {
     const property = event.target.name;
-    const value = event.target.value;
+    let value = event.target.value;
+    if (property === "country") {
+      value = value.split(",");
+    }
     setForm({
       ...form,
       [property]: value,
