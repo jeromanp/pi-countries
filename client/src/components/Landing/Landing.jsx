@@ -1,3 +1,5 @@
+import style from "./Landing.module.css"
+
 const Landindg = (props) => {
 
     function toHome(){
@@ -5,10 +7,10 @@ const Landindg = (props) => {
     }
 
     return(
-        <>
-            <h1>Estoy en Landindg</h1>
+        <div className={style.container}>
+            <h1>Click to start</h1>
             <button onClick={toHome}>Iniciar</button>
-        </>
+        </div>
     )
 }
 
