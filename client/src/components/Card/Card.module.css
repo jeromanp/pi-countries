@@ -1,14 +1,33 @@
 .card{
     border: 1px solid black;
-    width: fit-content;
+    width: 200px;
     height: fit-content;
-    border-radius: 5px;
-    display:grid;
+    border-radius: 15px;
+    display:inline-block;
     justify-content: center;
+    margin: 1%;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  justify-content: space-between; 
+
 }
 
 .card img {
-    width: 50px;
-    height: 40px;
+    width: auto;
+    height: 50px;
     margin: auto;
+    margin-left: auto;
     }
+
+.card text{
+    direction: ltr;
+    align-items: center;
+    justify-content: center;
+    size: 10px;
+    font-size: small;
+}
+
+img:hover{
+    cursor: pointer;
+}
