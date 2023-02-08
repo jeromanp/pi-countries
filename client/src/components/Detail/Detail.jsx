@@ -28,7 +28,7 @@ const Detail = (props) => {
       </div>
       <div>
         
-      <h1>Estoy en Detail</h1>
+      <h1>Country Detail</h1>
       {country && <img src={country.flag} alt={country.name + " flag"} />}
       {country && <p>ID: {country.id}</p>}
       {country && <p>Name: {country.name} </p>}
