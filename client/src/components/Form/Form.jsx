@@ -110,7 +110,7 @@ function validate(inputs) {
           <label>Country: </label>
           <input
             type="text"
-            placeholder="Country for the activity"
+            placeholder="Country IDs, separated by commas"
             name="country"
             value={form.country}
             onChange={handleChange}
