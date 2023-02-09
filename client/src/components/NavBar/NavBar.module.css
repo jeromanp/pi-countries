@@ -24,6 +24,7 @@
     padding: 20px 82px;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
 
 
   }
