@@ -55,16 +55,16 @@ const SearchCountry = () => {
           <hr />
         </div>
 
-        <div>
           <h1>Search Country</h1>
+        <div className={style.search}>
           <input
             type="text"
             value={searchName}
             onChange={handleSearch}
-            placeholder="Name of Country"
+            placeholder="Country"
           />
+        <button className={style.search} onClick={handleClick}>🔍</button>
         </div>
-        <button onClick={handleClick}>Search</button>
 
         <div>
           <hr />
