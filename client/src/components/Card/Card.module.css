@@ -8,25 +8,36 @@
     margin: 1%;
     align-items: flex-end;
     justify-content: center;
-    overflow: hidden;
-  justify-content: space-between; 
+    justify-content: space-between; 
+    /* overflow:unset */
 
 }
 
 .card img {
-    width: auto;
+    width: 70px;
     height: 50px;
     margin: auto;
     margin-left: auto;
+    align-items:stretch;
+    padding-top: 10px;
+    padding-left: 0px;
+    transform: translate(-70%, 10%);
+
     }
 
-.card text{
+.text{
     direction: ltr;
     align-items: center;
     justify-content: center;
     size: 10px;
     font-size: small;
+    justify-items: center;
+    transform: translate(0%, 5%);
+    overflow:hidden;
+    padding: 10px;
 }
+
+
 
 img:hover{
     cursor: pointer;
