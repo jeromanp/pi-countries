@@ -15,6 +15,7 @@ const SearchActivity = () => {
 
   const handleClick = () => {
     dispatch(filterByActivity(searchAct));
+    setSearchAct("")
   };
 
   const handleSearchAct = (e) => {
