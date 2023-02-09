@@ -82,7 +82,9 @@ const SearchCountry = () => {
             <option value="Default" disabled>
               Select Continent
             </option>
+            <option value="None">None</option>
             <option value="Africa">Africa</option>
+            <option value="Antarctica">Antarctica</option>
             <option value="Asia">Asia</option>
             <option value="Europe">Europe</option>
             <option value="North America">North America</option>
