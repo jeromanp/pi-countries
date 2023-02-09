@@ -22,7 +22,7 @@ const getActivity = async () => {
   const allActi = await Activity.findAll({
     include:{
       model:Country,
-      attributes:["id","name"],
+      attributes:["id","name", "flag"],
       through:{
         //eliminar tabla intermedia
         attributes:[],
