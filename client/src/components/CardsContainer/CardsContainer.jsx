@@ -15,6 +15,9 @@ const CardsContainer = () => {
             name={country.name}
             continent={country.continent}
             flag={country.flag}
+            season={country.season}
+            difficulty={country.difficulty}
+            duration={country.duration}
           />
         );
       })}
