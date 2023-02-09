@@ -34,7 +34,7 @@ const SearchActivity = () => {
           placeholder="Activity"
         />
         <button className={style.search} onClick={handleClick}>
-          Search Activity
+        🔍
         </button>
       </div>
     </div>

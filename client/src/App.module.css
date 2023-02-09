@@ -24,6 +24,19 @@ body{
   url("./Fonts/Sansation_Light.ttf")  
 }
 
+@font-face{
+  font-family: "Typewriter_Font";
+  src:url("./Fonts/Typewriter-Font.eot"), 
+  url("./Fonts/Typewriter-Font.ttf")  
+}
+
+@font-face{
+  font-family: "Veteran";
+  src:url("./Fonts/Veteran_Typewriter.eot"), 
+  url("./Fonts/Veteran_Typewriter.ttf")  
+}
+
+
 
 @media screen and (max-width: 580px) {
 

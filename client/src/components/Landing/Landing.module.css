@@ -4,20 +4,10 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    font-family: "Veteran";
   }
   
-  /* .container button {
-    padding: 10px 20px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    height: 2cm;
-    width: 3cm;
-  } */
-  
+ 
   .container h1 {
     text-align: center;
     margin-bottom: 20px;

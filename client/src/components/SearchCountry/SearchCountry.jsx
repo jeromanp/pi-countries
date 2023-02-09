@@ -69,7 +69,7 @@ const SearchCountry = () => {
         <div>
           <hr />
           <h1>Filters</h1>
-
+          <br/>
           <select
             name="Filter Continent"
             defaultValue={"Default"}
