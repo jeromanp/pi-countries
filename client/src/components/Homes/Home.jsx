@@ -1,3 +1,4 @@
+import style from "./Home.module.css"
 import CardsContainer from "../CardsContainer/CardsContainer"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
@@ -12,16 +13,16 @@ const Home = () => {
         dispatch(getCountries())        
     },[dispatch])
 
-
     return(
-        <>            
+        <div className={style.container}>            
+            <nav className={style.navbar}>
+                <SearchCountry />
+                <SearchActivity />
+            </nav>
             <h1>Estoy en Home</h1>
-            <SearchCountry />
-            <SearchActivity />
             <CardsContainer />
-        </>
+        </div>
     )
 }
-
 
 export default Home

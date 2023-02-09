@@ -1,0 +1,15 @@
+.container {
+    text-align: justify;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 20px;
+}
+
+
