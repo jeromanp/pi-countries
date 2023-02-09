@@ -1,14 +1,14 @@
+import style from "./Form.module.css";
 import axios from "axios";
 import { useState } from "react";
 
 const Form = () => {
+  ////////////////
 
-////////////////
-
-function validate(inputs) {
+  function validate(inputs) {
     const errors = {};
     const lettersOnly = /^[a-zA-Z,]+$/;
-    const letterAndCo = /^[a-zA-Z]+$/
+    const letterAndCo = /^[a-zA-Z]+$/;
 
     if (!inputs.country.length) {
       errors.country = "Se requiere al menos un country";
@@ -19,14 +19,14 @@ function validate(inputs) {
         }
       });
     }
- 
-    
+
     if (!inputs.name) {
       errors.name = "Se requiere un nombre de la actividad";
     } else if (!letterAndCo.test(inputs.name)) {
       errors.name = "El name debe tener solo letras";
     } else if (inputs.difficulty < 1 || inputs.difficulty > 5) {
-      errors.difficulty = "La dificultad de la actividad debe estar entre 1 y 5";
+      errors.difficulty =
+        "La dificultad de la actividad debe estar entre 1 y 5";
     } else if (inputs.duration < 1 || inputs.duration > 31) {
       errors.difficulty =
         "La duracion de la actividad debe estar entre 1 y 31 dias";
@@ -35,7 +35,7 @@ function validate(inputs) {
     }
     return errors;
   }
-///////////////
+  ///////////////
 
   const [form, setForm] = useState({
     country: [],
@@ -74,9 +74,10 @@ function validate(inputs) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios.post("http://localhost:3001/activities",form)
-    .then(res=>alert(`Se creo la actividad`))
-    .catch(error=>alert(error))
+    axios
+      .post("http://localhost:3001/activities", form)
+      .then((res) => alert(`Se creo la actividad`))
+      .catch((error) => alert(error));
 
     if (Object.keys(error).length === 0) {
       setForm({
@@ -99,8 +100,8 @@ function validate(inputs) {
   }
 
   return (
-    <>
-      <h1>Estoy en Form</h1>
+    <div className={style.container}>
+      <h1>Create Activity</h1>
       <form
         onSubmit={(e) => {
           handleSubmit(e);
@@ -115,7 +116,7 @@ function validate(inputs) {
             value={form.country}
             onChange={handleChange}
           />
-          <p className="danger">{error.country}</p>
+          <p className={style.danger}>{error.country}</p>
         </div>
 
         <div>
@@ -127,7 +128,7 @@ function validate(inputs) {
             value={form.name}
             onChange={handleChange}
           />
-          <p className="danger">{error.name}</p>
+          <p className={style.danger}>{error.name}</p>
         </div>
 
         <div>
@@ -139,7 +140,7 @@ function validate(inputs) {
             value={form.difficulty}
             onChange={handleChange}
           />
-          <p className="danger">{error.difficulty}</p>
+          <p className={style.danger}>{error.difficulty}</p>
         </div>
 
         <div>
@@ -151,7 +152,7 @@ function validate(inputs) {
             value={form.duration}
             onChange={handleChange}
           />
-          <p className="danger">{error.duration}</p>
+          <p className={style.danger}>{error.duration}</p>
         </div>
 
         <div>
@@ -162,14 +163,14 @@ function validate(inputs) {
             <option value="Autumn">Autumn</option>
             <option value="Winter">Winter</option>
           </select>
-          <p className="danger">{error.season}</p>
+          <p className={style.danger}>{error.season}</p>
         </div>
 
         <div>
           <button type="submit">Enviar</button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
