@@ -28,6 +28,9 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, countries: action.payload };
 
     case FILTER_CONTINENTS:
+      if(action.payload === "None"){
+        return {...state, countries:[...state.countriesCopy]}
+      }
       const countriesCopy = [...state.countries];
       console.log("PREV",countriesCopy);
       const filteredCountries = countriesCopy.filter(country => country.continent === action.payload)
