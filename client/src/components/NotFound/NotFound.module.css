@@ -8,7 +8,7 @@
     background-color: rgba(0, 0, 0, 0.711);
   }
   
-  h1 {
+  .container h1 {
     color: rgb(154, 62, 62);
     text-shadow: 1px 1px black;
     font-size: 2.5cm;
