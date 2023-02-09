@@ -1,0 +1,16 @@
+.container {
+    height: 100vh;
+    width: 100%;    
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.711);
+  }
+  
+  h1 {
+    color: rgb(154, 62, 62);
+    text-shadow: 1px 1px black;
+    font-size: 2.5cm;
+    height: 100%;
+  }
