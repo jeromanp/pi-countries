@@ -12,7 +12,6 @@ import {
 const SearchCountry = () => {
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState("");
-
   const [selectedContinent, setSelectedContinent] = useState();
 
   useEffect(() => {
@@ -26,10 +25,13 @@ const SearchCountry = () => {
 
   const handleSearch = (e) => {
     setSearchName(e.target.value);
+    
   };
 
   const handleClick = () => {
     dispatch(searchCountry(searchName));
+    setSearchName("")
+
   };
 
   function handleSelect(event) {
@@ -46,6 +48,8 @@ const SearchCountry = () => {
       return dispatch(orderPopulation(value));
     }
   }
+
+
 
   return (
     <div>
