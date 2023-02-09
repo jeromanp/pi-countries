@@ -29,6 +29,7 @@ const About = () => {
               <a
                 href="https://www.linkedin.com/in/jose-eduardo-roman/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
@@ -41,7 +42,8 @@ const About = () => {
           <li>
             <p>
               Github
-              <a href="https://github.com/jeromanp" target="_blank">
+              <a href="https://github.com/jeromanp" target="_blank"
+              rel="noreferrer">
                 <img
                   src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                   alt="Github Logo"
