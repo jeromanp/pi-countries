@@ -11,9 +11,10 @@
 
 .container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     justify-content: center;
     align-items: center;
+    padding-left: 15%;
   }
   
   .card {
@@ -28,4 +29,6 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
+    padding: 50px;
   }
+
