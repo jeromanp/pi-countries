@@ -1,3 +1,4 @@
+import style from "./SearchCountry.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import {
@@ -48,60 +49,75 @@ const SearchCountry = () => {
 
   return (
     <div>
-      <div>
-        <button onClick={() => dispatch(resetState())}>Clear Filters</button>
+      <div className={style.container}>
+        <div>
+          <button onClick={() => dispatch(resetState())}>Clear Filters</button>
+          <hr />
+        </div>
 
-        <h1>Buscando Country</h1>
-        <input
-          type="text"
-          value={searchName}
-          onChange={handleSearch}
-          placeholder="Name of Country"
-        />
+        <div>
+          <h1>Search Country</h1>
+          <input
+            type="text"
+            value={searchName}
+            onChange={handleSearch}
+            placeholder="Name of Country"
+          />
+        </div>
         <button onClick={handleClick}>Search</button>
+
+        <div>
+          <hr />
+          <h1>Filters</h1>
+
+          <select
+            name="Filter Continent"
+            defaultValue={"Default"}
+            onChange={continet}
+          >
+            <option value="Default" disabled>
+              Select Continent
+            </option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="Oceania">Oceania</option>
+            <option value="South America">South America</option>
+          </select>
+        </div>
+
+        <div>
+          <select
+            name="Order Alphabetic"
+            defaultValue={"Default"}
+            onChange={handleSelect}
+          >
+            <option value="Default" disabled>
+              Select Alphabetic Order
+            </option>
+
+            <option value="AZ">AZ</option>
+            <option value="ZA">ZA</option>
+          </select>
+        </div>
+
+        <div>
+          <select
+            name="Order Population"
+            defaultValue={"Default"}
+            onChange={handleSelect}
+          >
+            <option value="Default" disabled>
+              Select Population Order
+            </option>
+
+            <option value="Higher Population">Higher Population</option>
+            <option value="Lower Population">Lower Population</option>
+          </select>
+          <hr />
+        </div>
       </div>
-
-      <select
-        name="Filter Continent"
-        defaultValue={"Default"}
-        onChange={continet}
-      >
-        <option value="Default" disabled>
-          Select Continent
-        </option>
-        <option value="Africa">Africa</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="North America">North America</option>
-        <option value="Oceania">Oceania</option>
-        <option value="South America">South America</option>
-      </select>
-
-      <select
-        name="Order Alphabetic"
-        defaultValue={"Default"}
-        onChange={handleSelect}
-      >
-        <option value="Default" disabled>
-          Select Alphabetic Order
-        </option>
-
-        <option value="AZ">AZ</option>
-        <option value="ZA">ZA</option>
-      </select>
-
-      <select
-        name="Order Population"
-        defaultValue={"Default"}
-        onChange={handleSelect}
-      >
-        <option value="Default" disabled>
-          Select Population Order
-        </option>
-
-        <option value="Higher Population">Higher Population</option>
-        <option value="Lower Population">Lower Population</option>
-      </select>
     </div>
   );
 };
