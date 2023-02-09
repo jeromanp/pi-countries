@@ -8,7 +8,8 @@ const Landindg = (props) => {
 
     return(
         <div className={style.container}>
-            <h1>Click to start</h1>
+            <h1>P.I. Countries</h1>
+            <h2>Click to start</h2>
             <button onClick={toHome}>Iniciar</button>
         </div>
     )
