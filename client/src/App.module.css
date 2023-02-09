@@ -8,4 +8,32 @@ body{
   background-position: center;
   background-repeat: repeat-y;
   height: 100vh;
+  font-family: "Happy_Phantom";
+  /* font-family: "Sansation_Light"; */
+}
+
+@font-face{
+  font-family: "Happy_Phantom";
+  src:url("./Fonts/Happy_Phantom.eot"), 
+  url("./Fonts/Happy_Phantom.ttf")  
+}
+
+@font-face{
+  font-family: "Sansation_Light";
+  src:url("./Fonts/Sansation_Light.eot"), 
+  url("./Fonts/Sansation_Light.ttf")  
+}
+
+
+@media screen and (max-width: 580px) {
+
+  .container {
+      margin: 2rem 1rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+      margin: 1rem 0.5rem;
+  }
 }
