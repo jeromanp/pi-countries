@@ -1,12 +1,14 @@
 import style from "./SearchCountry.module.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   searchCountry,
   orderAlphabetic,
   filterContinents,
   orderPopulation,
   resetState,
+  getAllActivity,
 } from "../../redux/actions/actions";
 
 const SearchCountry = () => {
@@ -37,15 +39,20 @@ const SearchCountry = () => {
     }
   }
 
+  const handleClickAll = () => {
+    dispatch(getAllActivity());
+  };
+
   return (
     <div>
       <div className={style.container}>
-        <div>
+        <div className={style.buttonClear}>
           <button onClick={() => dispatch(resetState())}>Clear Filters</button>
           <hr />
         </div>
 
         <h1>Search Country</h1>
+
         <div className={style.search}>
           <input
             type="text"
@@ -61,6 +68,7 @@ const SearchCountry = () => {
         <div>
           <hr />
           <h1>Filters</h1>
+          <br />
           <br />
           <select
             name="Filter Continent"
@@ -91,7 +99,7 @@ const SearchCountry = () => {
               Select Alphabetic Order
             </option>
 
-            <option value="None">None</option>            
+            <option value="None">None</option>
             <option value="AZ">AZ</option>
             <option value="ZA">ZA</option>
           </select>
@@ -107,11 +115,17 @@ const SearchCountry = () => {
               Select Population Order
             </option>
 
-            <option value="None">None</option>  
+            <option value="None">None</option>
             <option value="Higher Population">Higher Population</option>
             <option value="Lower Population">Lower Population</option>
           </select>
-          <hr />
+
+          <div className={style.getActivity}>
+            <Link to="/getactivities">
+              <hr />
+              <button onClick={handleClickAll}>Get All Activity</button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
