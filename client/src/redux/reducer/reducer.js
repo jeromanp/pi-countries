@@ -70,29 +70,36 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case ORDER_POPULATION:
-      const filterPopulation = [...state.countries];
-      if (action.payload === "Higher Population") {
-        filterPopulation.sort((a, b) => {
-          if (a.population > b.population) {
-            return -1;
-          }
-          if (a.population < b.population) {
-            return 1;
-          }
-          return 0;
-        });
+      const countriesPopulation = [...state.allCountries];
+      let filterPopulation;
+      if (action.payload === "None") {
+        filterPopulation = countriesPopulation;
+      } else {
+        if (action.payload === "Higher Population") {
+          filterPopulation = countriesPopulation.sort((a, b) => {
+            if (a.population > b.population) {
+              return -1;
+            }
+            if (a.population < b.population) {
+              return 1;
+            }
+            return 0;
+          });
+        } else if (action.payload === "Lower Population") {
+          filterPopulation = countriesPopulation.sort((a, b) => {
+            if (a.population < b.population) {
+              return -1;
+            }
+            if (a.population > b.population) {
+              return 1;
+            }
+            return 0;
+          });
+        } else {
+          filterPopulation = countriesPopulation;
+        }
       }
-      if (action.payload === "Lower Population") {
-        filterPopulation.sort((a, b) => {
-          if (a.population < b.population) {
-            return -1;
-          }
-          if (a.population > b.population) {
-            return 1;
-          }
-          return 0;
-        });
-      }
+
       return {
         ...state,
         countries: filterPopulation,
