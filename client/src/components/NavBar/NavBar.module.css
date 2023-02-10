@@ -5,10 +5,12 @@
     padding: 30px 82px;
     font-family: "Veteran";
     font-size: larger;
+    color:antiquewhite;
+
   }
   
   a {
-    color: black;
+    color:antiquewhite;
     text-decoration: none;
     margin: 5px 120px;
   }
@@ -19,7 +21,7 @@
 
   .navbar{
     position: fixed;
-    background-color: #333;
+    background-color: rgba(6, 6, 7, 0.805);
     width: 100%;
     left: 0;
     padding: 20px 82px;

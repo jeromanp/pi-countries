@@ -39,7 +39,7 @@ const Home = () => {
         <SearchActivity />
         <CardsContainer />
       </nav>
-      <h1>Estoy en Home</h1>
+      {/* <h1>Estoy en Home</h1> */}
       <Paginado
         charactersPerPage={charactersPerPage}
         countries={countries.length}
@@ -49,6 +49,7 @@ const Home = () => {
         return (
           <Card
             key={c.id}
+            id={c.id}
             name={c.name}
             flag={c.flag}
             continent={c.continent}

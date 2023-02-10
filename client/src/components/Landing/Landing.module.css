@@ -16,6 +16,8 @@
 
   .container h2{
     font-size: 1.5cm;
+    color:rgba(55, 34, 6, 0.763);
+    background-color: rgba(250, 235, 215, 0.285);
   }
 
   .container button {
@@ -23,7 +25,7 @@
     width: 8em;
     border: none;
     border-radius: 10em;
-    background: #016DD9;
+    background: blue;
     font-size: 17px;
     color: #ffffff;
     font-family: inherit;
@@ -33,6 +35,11 @@
    .container button:hover {
     animation: shake3856 0.3s linear infinite both;
    }
+
+   .container button:hover {
+    background-color: white;
+    color: blue;
+  }
 
    @keyframes shake3856 {
     0% {

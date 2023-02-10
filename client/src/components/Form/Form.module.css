@@ -10,12 +10,16 @@
     border: 3px solid #ccc;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.641);
+    color:antiquewhite;
+
   }
 
   .container h1 {
     text-align: center;
     margin-bottom: 0px;
     font-size: 36px;
+    color:antiquewhite;
+
   }
 
   .container div {
@@ -32,17 +36,22 @@
   .container input {
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(204, 204, 204);
     font-size: 15px;
   }
 
   .container button {
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #2196f3;
+    background-color: blue;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+  }
+
+  .container button:hover {
+    background-color: white;
+    color: blue;
   }
 
   .container p {
@@ -50,7 +59,7 @@
     flex-direction: row;
     width: 100%;
     flex-grow: 1;
-    transform: translate(-70%, -50%);
+    transform: translate(-75%, -40%);
 }
 
   .warning {

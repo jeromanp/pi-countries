@@ -2,11 +2,13 @@
     display: flex;
     justify-content: center;
     padding: 0.7em 0;
+    
   }
   
   .number {
     list-style: none;
     margin: 0 0px;
+    
 
   }
   
@@ -17,12 +19,14 @@
     padding: 0.7em 0.5em;
     border-radius: 7px;
     background-color: rgba(0, 0, 0, 0.71);
+    color:antiquewhite;
+
 
   }
   
   .number button:hover,
   .number button.active {
-    background-color: rgb(193, 142, 14);
+    background-color: blue;
     color: #fff;
     
   }

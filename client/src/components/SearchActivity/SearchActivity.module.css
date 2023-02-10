@@ -7,14 +7,14 @@
 
   }
   
-  h1 {
+  .container h1 {
     font-size: 1rem;
     margin-bottom: 0.1rem;
     font-family: "Veteran";
 
   }
   
-  input {
+  .container input {
     width: 80%;
     height: 1.2rem;
     margin: 0.5rem 0;
@@ -38,6 +38,11 @@
     font-family: "Typewriter_Font";
     transform: translate(0%, 20%);
   }
+  
+  .container button:hover {
+    background-color: white;
+    color: blue;
+  }
 
   .search {
     display: flex;
@@ -48,4 +53,9 @@
 
   .search button{
     transform: translate(0%, -60%);
+  }
+
+  .search button:hover {
+    background-color: white;
+    color: blue;
   }

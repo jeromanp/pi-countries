@@ -6,6 +6,8 @@
     background-size: 100%;
     font-family: "Typewriter_Font";
     font-size: 0.5cm;
+    color:antiquewhite;
+
   }
   
   .text {
@@ -35,6 +37,11 @@
     cursor: pointer;
     margin-bottom: 0px;
     margin-top: 20px;
+  }
+
+  .container button:hover {
+    background-color: white;
+    color: blue;
   }
 
   .text p {
