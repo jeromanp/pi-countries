@@ -20,6 +20,7 @@ const Card = (props) => {
         {props.season && <p>Season: {props.season}</p>}
         {props.difficulty && <p>Dificulty: {props.difficulty}</p>}
         {props.duration && <p>Duration: {props.duration}</p>}
+        {props.src && <img src={props.src} alt={props.name} />}
           </div>
       </div>
     );
