@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountries } from "../../redux/actions/actions";
 import SearchCountry from "../SearchCountry/SearchCountry";
-import SearchActivity from "../SearchActivity/SearchActivity";
+// import SearchActivity from "../SearchActivity/SearchActivity";
 import Paginado from "../Paginado/Paginado";
 import Card from "../Card/Card";
 
@@ -35,10 +35,7 @@ const Home = () => {
     <div className={style.container}>
       <nav className={style.navbar}>
         <SearchCountry />
-        <SearchActivity />
-        {/* <CardsContainer /> */}
       </nav>
-      {/* <h1>Estoy en Home</h1> */}
       <Paginado
         charactersPerPage={charactersPerPage}
         countries={countries.length}
