@@ -70,7 +70,7 @@ const SearchCountry = () => {
             <option value="Default" disabled>
               Select Continent
             </option>
-            <option value="All">All</option>
+            <option value="All">All Countries</option>
             <option value="Africa">Africa</option>
             <option value="Antarctica">Antarctica</option>
             <option value="Asia">Asia</option>
@@ -91,6 +91,7 @@ const SearchCountry = () => {
               Select Alphabetic Order
             </option>
 
+            <option value="None">None</option>            
             <option value="AZ">AZ</option>
             <option value="ZA">ZA</option>
           </select>
