@@ -37,7 +37,7 @@ const Home = () => {
       <nav className={style.navbar}>
         <SearchCountry />
         <SearchActivity />
-        <CardsContainer />
+        {/* <CardsContainer /> */}
       </nav>
       {/* <h1>Estoy en Home</h1> */}
       <Paginado
@@ -45,6 +45,7 @@ const Home = () => {
         countries={countries.length}
         paginado={paginado}
       />
+      <CardsContainer />
       {currentCharacters?.map((c) => {
         return (
           <Card
@@ -53,6 +54,9 @@ const Home = () => {
             name={c.name}
             flag={c.flag}
             continent={c.continent}
+            difficulty={c.difficulty}
+            duration={c.duration}
+            season={c.season}
           />
         );
       })}
