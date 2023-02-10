@@ -20,7 +20,7 @@ function App() {
       <Route path="/detail/:id" component={Detail} />
       <Route path="/activities" component={Form} />
       <Route path="/about" component={About} />
-      <Route path="/activities" component={Activities} />
+      <Route path="/getactivities" component={Activities} />
       {/* <Route component={NotFound} /> */}
     </div>
   );
