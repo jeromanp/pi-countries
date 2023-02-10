@@ -1,0 +1,28 @@
+.paginado {
+    display: flex;
+    justify-content: center;
+    padding: 0.7em 0;
+  }
+  
+  .number {
+    list-style: none;
+    margin: 0 -120px;
+
+  }
+  
+  .number a {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid rgb(51, 51, 51);
+    padding: 0.7em 0.5em;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.71);
+
+  }
+  
+  .number a:hover,
+  .number a.active {
+    background-color: rgb(193, 142, 14);
+    color: #fff;
+    
+  }
