@@ -5,6 +5,7 @@ import Form from "./components/Form/Form";
 import Detail from "./components/Detail/Detail";
 import NavBar from "./components/NavBar/NavBar";
 import About from "./components/About/About";
+import Activities from "./components/Activities/Activities";
 // import NotFound from "./components/NotFound/NotFound";
 import { Route, useLocation } from "react-router-dom";
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="/detail/:id" component={Detail} />
       <Route path="/activities" component={Form} />
       <Route path="/about" component={About} />
+      <Route path="/activities" component={Activities} />
       {/* <Route component={NotFound} /> */}
     </div>
   );
