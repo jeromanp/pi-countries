@@ -14,7 +14,7 @@ const Paginado = ({charactersPerPage,countries,paginado}) =>{
                 {pageNumbers && 
                 pageNumbers.map(number => (
                     <li className={style.number} key={number}>
-                        <a onClick={() => paginado(number)}>{number}</a>
+                        <button onClick={() => paginado(number)}>{number}</button>
                     </li>
                 ))}
             </ul>
