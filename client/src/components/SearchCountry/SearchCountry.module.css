@@ -31,14 +31,17 @@
   padding: 0.5rem;
   font-size: 0.9rem;
   border: 2px solid blue;
+  background-color: rgba(0, 0, 255, 0.229);
+  color: antiquewhite;
+
   border-radius: 5px;
   appearance: none;
 }
 
 .container select:focus {
-  border-color: blue;
+  border-color: rgb(235, 232, 230);
   outline: none;
-  background-color: rgba(12, 12, 148, 0.715);
+  background-color: rgb(5, 63, 238);
   color: antiquewhite;
 }
 
