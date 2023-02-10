@@ -25,7 +25,7 @@ const SearchActivity = () => {
 
   return (
     <div className={style.container}>
-      <Link to="/allactivities">
+      <Link to="/getactivities">
       <button onClick={handleClickAll}>Get All Activity</button>      
       </Link>
       <h1>Search Activity</h1>
