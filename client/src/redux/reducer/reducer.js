@@ -33,30 +33,41 @@ const rootReducer = (state = initialState, action) => {
 
     case FILTER_CONTINENTS:
       const allCountries = state.allCountries;
-      const filterContinents =
-        action.payload === "All"
-          ? allCountries
-          : allCountries.filter((e) => e.continent === action.payload);
+      let filterContinents;
+      if (action.payload === "All") {
+        filterContinents = allCountries;
+      } else {
+        filterContinents = allCountries.filter(
+          (e) => e.continent === action.payload
+        );
+      }
       return {
         ...state,
         countries: filterContinents,
       };
 
     case ORDER_ALPHABETIC:
-      const countriesAlpha = [...state.countries];
+      const countriesAlpha = [...state.allCountries];
       let orderedCountries;
-      if (action.payload === "AZ") {
-        orderedCountries = countriesAlpha.sort((a, b) =>
-          a.name.localeCompare(b.name)
-        );
-      } else if (action.payload === "ZA") {
-        orderedCountries = countriesAlpha.sort((a, b) =>
-          b.name.localeCompare(a.name)
-        );
-      } else {
+      if (action.payload === "None") {
         orderedCountries = countriesAlpha;
+      } else {
+        if (action.payload === "AZ") {
+          orderedCountries = countriesAlpha.sort((a, b) =>
+            a.name.localeCompare(b.name)
+          );
+        } else if (action.payload === "ZA") {
+          orderedCountries = countriesAlpha.sort((a, b) =>
+            b.name.localeCompare(a.name)
+          );
+        } else {
+          orderedCountries = countriesAlpha;
+        }
       }
-      return { ...state, countries: orderedCountries };
+      return {
+        ...state,
+        countries: orderedCountries,
+      };
 
     case ORDER_POPULATION:
       const filterPopulation = [...state.countries];
