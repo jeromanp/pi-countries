@@ -1,18 +1,12 @@
 import style from "./SearchActivity.module.css";
-import { useDispatch /*useSelector*/ } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 import { useState } from "react";
-import { filterByActivity, getAllActivity } from "../../redux/actions/actions";
-import { Link } from "react-router-dom";
+import { filterByActivity } from "../../redux/actions/actions";
 
 const SearchActivity = () => {
   const dispatch = useDispatch();
-
-  //   const countries = useSelector((state) => state.countries);
+  const countries = useSelector((state)=> state.countries)
   const [searchAct, setSearchAct] = useState("");
-
-  const handleClickAll = () => {
-    dispatch(getAllActivity());
-  };
 
   const handleClick = () => {
     dispatch(filterByActivity(searchAct));
@@ -24,10 +18,7 @@ const SearchActivity = () => {
   };
 
   return (
-    <div className={style.container}>
-      <Link to="/getactivities">
-      <button onClick={handleClickAll}>Get All Activity</button>      
-      </Link>
+    <div className={style.container}>     
       <h1>Search Activity</h1>
       
 
@@ -36,12 +27,13 @@ const SearchActivity = () => {
           type="text"
           value={searchAct}
           onChange={handleSearchAct}
-          placeholder="Activity"
+          placeholder="Name of the activity"
         />
         <button className={style.search} onClick={handleClick}>
         🔍
         </button>
       </div>
+      
     </div>
   );
 };
