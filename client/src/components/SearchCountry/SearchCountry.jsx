@@ -107,6 +107,7 @@ const SearchCountry = () => {
               Select Population Order
             </option>
 
+            <option value="None">None</option>  
             <option value="Higher Population">Higher Population</option>
             <option value="Lower Population">Lower Population</option>
           </select>
