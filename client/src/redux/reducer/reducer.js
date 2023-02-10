@@ -32,7 +32,7 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, countries: action.payload };
 
     case FILTER_CONTINENTS:
-      const allCountries = state.allCountries;
+      const allCountries = [...state.allCountries];
       let filterContinents;
       if (action.payload === "All") {
         filterContinents = allCountries;
@@ -47,7 +47,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case ORDER_ALPHABETIC:
-      const countriesAlpha = [...state.allCountries];
+      const countriesAlpha = [...state.countries];
       let orderedCountries;
       if (action.payload === "None") {
         orderedCountries = countriesAlpha;
@@ -70,7 +70,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case ORDER_POPULATION:
-      const countriesPopulation = [...state.allCountries];
+      const countriesPopulation = [...state.countries];
       let filterPopulation;
       if (action.payload === "None") {
         filterPopulation = countriesPopulation;
