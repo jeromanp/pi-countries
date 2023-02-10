@@ -2,6 +2,7 @@ import style from "./SearchActivity.module.css";
 import { useDispatch /*useSelector*/ } from "react-redux";
 import { useState } from "react";
 import { filterByActivity, getAllActivity } from "../../redux/actions/actions";
+import { Link } from "react-router-dom";
 
 const SearchActivity = () => {
   const dispatch = useDispatch();
@@ -24,8 +25,11 @@ const SearchActivity = () => {
 
   return (
     <div className={style.container}>
-      <button onClick={handleClickAll}>Get All Activity</button>
+      <Link to="/allactivities">
+      <button onClick={handleClickAll}>Get All Activity</button>      
+      </Link>
       <h1>Search Activity</h1>
+      
 
       <div className={style.search}>
         <input
