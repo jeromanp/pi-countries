@@ -9,7 +9,7 @@
   } */
 
   .container {
-    /* display: flex; */
+    display:flexbox;
     flex-wrap: wrap;
     justify-content: center;
     margin: 50px 0;
@@ -25,4 +25,20 @@
   .container img{
     height: 50px;
     width: 70px;
+  }
+
+  .container button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+
+  .container button:hover {
+    background-color: white;
+    color: blue;
   }

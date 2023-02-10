@@ -2,12 +2,19 @@ import style from "./Activities.module.css";
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 
-const Activities = () => {
+const Activities = (props) => {
   const countries = useSelector((state) => state.countries);
   console.log(countries);
 
+  function backtoHome() {
+    return props.history.push("/home");
+  }
+
   return (
     <div className={style.container}>
+        <div>
+        <button onClick={backtoHome}>To Home</button>
+      </div>
       <h1>All Activities</h1>
       <div>
         {countries?.map((c) => {
