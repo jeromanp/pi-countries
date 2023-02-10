@@ -7,19 +7,23 @@ import {
   RESET_STATE,
   ORDER_POPULATION,
   FILTER_BY_ACTIVITY,
-  GET_ALL_ACTIVITIES
+  GET_ALL_ACTIVITIES,
 } from "../actions/type_actions";
 
 const initialState = {
   countries: [],
-  countriesCopy: [],
-  filterCountries:[]
+  allCountries: [],
+  filterCountries: [],
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_COUNTRIES:
-      return { ...state, countries: action.payload };
+      return {
+        ...state,
+        countries: action.payload,
+        allCountries: action.payload,
+      };
 
     case GET_COUNTRY:
       return { ...state, country: action.payload };
@@ -28,19 +32,15 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, countries: action.payload };
 
     case FILTER_CONTINENTS:
-      if(action.payload === "None"){
-        return {...state, countries:[...state.countriesCopy]}
-      }
-      const countriesCopy = [...state.countries];
-      console.log("PREV",countriesCopy);
-      const filteredCountries = countriesCopy.filter(country => country.continent === action.payload)
-      //console.log("RESULT",action.payload, filteredCountries);
-      //console.log("COPY",countriesCopy);
+      const allCountries = state.allCountries;
+      const filterContinents =
+        action.payload === "All"
+          ? allCountries
+          : allCountries.filter((e) => e.continent === action.payload);
       return {
         ...state,
-        countries: filteredCountries,
-        countriesCopy: countriesCopy        
-      };      
+        countries: filterContinents,
+      };
 
     case ORDER_ALPHABETIC:
       const countriesAlpha = [...state.countries];
@@ -86,18 +86,17 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         countries: filterPopulation,
       };
-    
+
     case FILTER_BY_ACTIVITY:
-      return{
+      return {
         ...state,
-        countries: action.payload
-      }
-      case GET_ALL_ACTIVITIES:
-        return { ...state, countries: action.payload };
-            
+        countries: action.payload,
+      };
+    case GET_ALL_ACTIVITIES:
+      return { ...state, countries: action.payload };
 
     case RESET_STATE:
-      const init = [...state.countriesCopy];
+      const init = [...state.allCountries];
       //console.log("INIT", init);
       return { ...state, countries: init };
 
