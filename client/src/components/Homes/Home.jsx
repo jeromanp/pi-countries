@@ -15,6 +15,7 @@ const Home = () => {
   //guardar en un estado local y setee el estado y lo inicie en 1
   const [currentPage, setCurrentPage] = useState(1);
   //estado, de cuantos cards van por pagina
+  //eslint-disable-next-line
   const [charactersPerPage, setCharactersPerPage] = useState(10);
   const indexOfLastCharacter = currentPage * charactersPerPage; //10
   const indexOfFirstCharacter = indexOfLastCharacter - charactersPerPage; //0
