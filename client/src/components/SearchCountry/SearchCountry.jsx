@@ -1,5 +1,5 @@
 import style from "./SearchCountry.module.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {
   searchCountry,
@@ -12,26 +12,14 @@ import {
 const SearchCountry = () => {
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState("");
-  const [selectedContinent, setSelectedContinent] = useState();
-
-  useEffect(() => {
-    dispatch(filterContinents(selectedContinent));
-    dispatch(resetState());
-  }, [selectedContinent, dispatch]);
-
-  const continet = (e) => {
-    dispatch(filterContinents(e.target.value));
-  };
 
   const handleSearch = (e) => {
     setSearchName(e.target.value);
-    
   };
 
   const handleClick = () => {
     dispatch(searchCountry(searchName));
-    setSearchName("")
-
+    setSearchName("");
   };
 
   function handleSelect(event) {
@@ -39,7 +27,7 @@ const SearchCountry = () => {
     const { name, value } = event.target;
 
     if (name === "Filter Continent") {
-      setSelectedContinent(value);
+      return dispatch(filterContinents(value));
     }
     if (name === "Order Alphabetic") {
       return dispatch(orderAlphabetic(value));
@@ -49,8 +37,6 @@ const SearchCountry = () => {
     }
   }
 
-
-
   return (
     <div>
       <div className={style.container}>
@@ -59,7 +45,7 @@ const SearchCountry = () => {
           <hr />
         </div>
 
-          <h1>Search Country</h1>
+        <h1>Search Country</h1>
         <div className={style.search}>
           <input
             type="text"
@@ -67,22 +53,24 @@ const SearchCountry = () => {
             onChange={handleSearch}
             placeholder="Country"
           />
-        <button className={style.search} onClick={handleClick}>🔍</button>
+          <button className={style.search} onClick={handleClick}>
+            🔍
+          </button>
         </div>
 
         <div>
           <hr />
           <h1>Filters</h1>
-          <br/>
+          <br />
           <select
             name="Filter Continent"
             defaultValue={"Default"}
-            onChange={continet}
+            onChange={handleSelect}
           >
             <option value="Default" disabled>
               Select Continent
             </option>
-            <option value="None">None</option>
+            <option value="All">All</option>
             <option value="Africa">Africa</option>
             <option value="Antarctica">Antarctica</option>
             <option value="Asia">Asia</option>
