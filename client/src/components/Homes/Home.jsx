@@ -1,28 +1,61 @@
-import style from "./Home.module.css"
-import CardsContainer from "../CardsContainer/CardsContainer"
-import { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { getCountries } from "../../redux/actions/actions"
-import SearchCountry from "../SearchCountry/SearchCountry"
-import SearchActivity from "../SearchActivity/SearchActivity"
+import style from "./Home.module.css";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getCountries } from "../../redux/actions/actions";
+import SearchCountry from "../SearchCountry/SearchCountry";
+import SearchActivity from "../SearchActivity/SearchActivity";
+import Paginado from "../Paginado/Paginado";
+import Card from "../Card/Card";
+import CardsContainer from "../CardsContainer/CardsContainer";
 
 const Home = () => {
-    const dispatch = useDispatch()
-    
-    useEffect(() => {
-        dispatch(getCountries())        
-    },[dispatch])
+  const dispatch = useDispatch();
+  const countries = useSelector((state) => state.countries);
 
-    return(
-        <div className={style.container}>            
-            <nav className={style.navbar}>
-                <SearchCountry />
-                <SearchActivity />
-            </nav>
-            <h1>Estoy en Home</h1>
-            <CardsContainer />
-        </div>
-    )
-}
+  //guardar en un estado local y setee el estado y lo inicie en 1
+  const [currentPage, setCurrentPage] = useState(1);
+  //estado, de cuantos cards van por pagina
+  const [charactersPerPage, setCharactersPerPage] = useState(10);
+  const indexOfLastCharacter = currentPage * charactersPerPage; //10
+  const indexOfFirstCharacter = indexOfLastCharacter - charactersPerPage; //0
+  const currentCharacters = countries.slice(
+    indexOfFirstCharacter,
+    indexOfLastCharacter
+  );
 
-export default Home
+  const paginado = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, [dispatch]);
+
+  return (
+    <div className={style.container}>
+      <nav className={style.navbar}>
+        <SearchCountry />
+        <SearchActivity />
+        <CardsContainer />
+      </nav>
+      <h1>Estoy en Home</h1>
+      <Paginado
+        charactersPerPage={charactersPerPage}
+        countries={countries.length}
+        paginado={paginado}
+      />
+      {currentCharacters?.map((c) => {
+        return (
+          <Card
+            key={c.id}
+            name={c.name}
+            flag={c.flag}
+            continent={c.continent}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+export default Home;
