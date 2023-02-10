@@ -17,9 +17,9 @@ const Card = (props) => {
         {props.subregion && <p>Subregion: {props.subregion}</p>}
         {props.area && <p>Area: {props.area}</p>}
         {props.population && <p>Population: {props.population}</p>}
-        {/* {props.season && <p>Season: {props.season}</p>}
+        {props.season && <p>Season: {props.season}</p>}
         {props.difficulty && <p>Dificulty: {props.difficulty}</p>}
-        {props.duration && <p>Duration: {props.duration}</p>} */}
+        {props.duration && <p>Duration: {props.duration}</p>}
           </div>
       </div>
     );
