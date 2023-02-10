@@ -6,7 +6,6 @@ import SearchCountry from "../SearchCountry/SearchCountry";
 import SearchActivity from "../SearchActivity/SearchActivity";
 import Paginado from "../Paginado/Paginado";
 import Card from "../Card/Card";
-import CardsContainer from "../CardsContainer/CardsContainer";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -45,7 +44,7 @@ const Home = () => {
         countries={countries.length}
         paginado={paginado}
       />
-      <CardsContainer />
+      {/* <CardsContainer /> */}
       {currentCharacters?.map((c) => {
         return (
           <Card
