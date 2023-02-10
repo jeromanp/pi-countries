@@ -34,6 +34,14 @@ const getActivity = async () => {
 
 const findActivity = async (name) => {
   const results = await Activity.findAll({
+    include:{
+      model:Country,
+      attributes:["id","name", "flag"],
+      through:{
+        //eliminar tabla intermedia
+        attributes:[],
+      }
+    },
     where: {
       name: { [Op.iLike]: `%${name}%` },
     },
