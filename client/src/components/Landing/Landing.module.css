@@ -5,6 +5,8 @@
     justify-content: center;
     height: 100vh;
     font-family: "Veteran";
+    background-color: rgba(0, 0, 0, 0.316);
+
   }
   
  
@@ -16,8 +18,8 @@
 
   .container h2{
     font-size: 1.5cm;
-    color:rgba(55, 34, 6, 0.763);
-    background-color: rgba(250, 235, 215, 0.285);
+    color:rgba(196, 199, 208, 0.763);
+    /* background-color: rgba(250, 235, 215, 0.285); */
   }
 
   .container button {

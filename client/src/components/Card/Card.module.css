@@ -1,7 +1,7 @@
 .card{
     border: 1px solid black;
     width: 200px;
-    height: fit-content;
+    height: 200px;
     border-radius: 15px;
     display:inline-block;
     justify-content: center;
@@ -12,8 +12,7 @@
     background-color: rgba(0, 0, 0, 0.534);
     font-family: "Sansation_Light";
     color:antiquewhite;
-    /* overflow:unset */
-
+    overflow:hidden
 }
 
 .card img {
@@ -45,3 +44,7 @@
 .container img:hover{
     cursor: pointer;
 }
+
+.card:hover{
+    background-color: rgba(0, 0, 0, 0.723);
+    }
