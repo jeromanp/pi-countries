@@ -1,8 +1,6 @@
-import CardsContainer from "../CardsContainer/CardsContainer";
 import style from "./Activities.module.css";
 import { useSelector } from "react-redux";
 import Card from "../Card/Card";
-// import CardsContainer from "../CardsContainer/CardsContainer";
 
 const Activities = () => {
   const countries = useSelector((state) => state.countries);
