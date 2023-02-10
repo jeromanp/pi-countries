@@ -1,20 +1,10 @@
-/* .container{
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    flex-wrap: wrap;
-    gap:1em;
-    margin: 5%;
-    align-items: center;    
-} */
 
 .container {
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
     align-items: center;
-    padding-left: 15%;
+    /* padding-left: 15%; */
   }
   
   .card {
