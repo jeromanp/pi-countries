@@ -34,9 +34,26 @@
     size: 10px;
     font-size: small;
     justify-items: center;
-    transform: translate(0%, 25%);
+    transform: translate(10%, 15%);
     overflow:hidden;
     padding: 15px;
+}
+
+.content{
+    font-size: small;
+    padding: 15px;
+}
+
+.content img{
+width: 100px;
+  height: 60px;
+  margin: auto;
+  margin-left: auto;
+  align-items: stretch;
+  padding-top: 10px;
+  padding-left: 0px;
+  transform: translate(150%, -80%);
+  object-fit: cover;
 }
 
 .icono{
