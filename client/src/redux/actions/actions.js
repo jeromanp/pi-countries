@@ -43,6 +43,7 @@ export function searchCountry(name) {
         `http://localhost:3001/countries?name=${name}`
       );
       const search = apiData.data;
+      console.log(search);
       dispatch({
         type: SEARCH_NAME,
         payload: search,
@@ -80,20 +81,21 @@ export function orderPopulation(orderAlpha) {
   };
 }
 
-export function getAllActivity(){
-  return async function(dispatch){
+export function getAllActivity() {
+  return async function (dispatch) {
     try {
-      const apiData = await axios.get("http://localhost:3001/activities")
-      const result = apiData.data
-      console.log(result);
+      const apiData = await axios.get("http://localhost:3001/activities");
+      const result = apiData.data;
+      //me trae el array de Actividades con Countries
+      // console.log(result);
       dispatch({
-        type:GET_ALL_ACTIVITIES,
-        payload:result
-      })
+        type: GET_ALL_ACTIVITIES,
+        payload: result,
+      });
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 }
 
 export function filterByActivity(name) {
@@ -102,17 +104,41 @@ export function filterByActivity(name) {
       const apiData = await axios.get(
         `http://localhost:3001/activities?name=${name}`
       );
-      const search = apiData.data;     
+      const search = apiData.data;
+      //me trae las propiedades segun la busqueda
       console.log(search);
-      
+      const obj={}
+      const newArray = search.map((activity) => {
+        activity.Countries.map((country) => {
+          // array.push(country.id,country.name, country.flag)
+          obj.countryId = country.id
+          obj.countryName = country.name
+          obj.countryFlag = country.flag
+          return {
+            id: country.id,
+            name: country.name,
+            flag: country.flag,
+            array:obj
+          };
+        });
+        // array.push(activity.id, activity.name)
+        obj.activityId = activity.id
+        obj.activityName = activity.name
+        return {
+          id: activity.id,
+          name: activity.name,
+          Countries: obj,
+        };
+      });
+      console.log(newArray);
+      console.log(obj);
+
       dispatch({
         type: FILTER_BY_ACTIVITY,
-        payload: search,
+        payload: [obj],
       });
     } catch (error) {
       alert(error.response.data.error);
     }
   };
 }
-
-
