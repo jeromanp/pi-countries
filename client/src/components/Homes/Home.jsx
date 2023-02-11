@@ -41,12 +41,11 @@ const Home = () => {
         countries={countries.length}
         paginado={paginado}
       />
-      {/* <CardsContainer /> */}
       {currentCharacters?.map((c) => {
         return (
           <Card
             key={c.id}
-            id={c.id}
+            // id={c.id}
             name={c.name}
             flag={c.flag}
             continent={c.continent}
@@ -54,8 +53,10 @@ const Home = () => {
             duration={c.duration}
             season={c.season}
           />
-        );
-      })}
+          );
+        })}
+      <div>
+      </div>
     </div>
   );
 };
