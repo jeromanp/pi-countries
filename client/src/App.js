@@ -21,8 +21,7 @@ function App() {
       <Route path="/activities" component={Form} />
       <Route path="/about" component={About} />
       <Route path="/getactivities" component={Activities} />
-      {/* <Route component={NotFound} /> */}
-      <Route path='/*' component={NotFound} />
+      {/* <Route path='/*' component={NotFound} /> */}
 
     </div>
   );
