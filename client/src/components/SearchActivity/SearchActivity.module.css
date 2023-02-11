@@ -1,61 +1,61 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    font-family: "Veteran";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  font-family: "Veteran";
+}
 
-  }
-  
-  .container h1 {
-    font-size: 1rem;
-    margin-bottom: 0.1rem;
-    font-family: "Veteran";
+.container h1 {
+  font-size: 1.3rem;
+  margin-bottom: 0.1rem;
+  font-family: "Veteran";
+  align-self: flex-start;
+}
 
-  }
-  
-  .container input {
-    width: 80%;
-    height: 1.2rem;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    font-family: "Veteran";
+.container input {
+  width: 10%;
+  height: 1.2rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  font-family: "Veteran";
+  background-color: rgba(0, 0, 255, 0.66);
+  transform: translate(0%, -50%);
+}
 
-  }
-  
-  .container button {
-    width: auto;
-    height: auto;
-    margin: 2rem 0;
-    padding: 0.5rem;
-    font-size: 1rem;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: "Typewriter_Font";
-    transform: translate(0%, 20%);
-  }
-  
-  .container button:hover {
-    background-color: white;
-    color: blue;
-  }
+.container button {
+  width: auto;
+  height: auto;
+  margin: 2rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Typewriter_Font";
 
-  .search {
-    display: flex;
-    align-self: flex-end;
-    flex-direction: row;
+  /* transform: translate(0%, 50%); */
+}
 
-  }
+.container button:hover {
+  background-color: white;
+  color: blue;
+}
 
-  .search button{
-    transform: translate(0%, -60%);
-  }
+.search {
+  display: contents;
+  align-self: flex-start;
+  flex-direction: row;
+}
 
-  .search button:hover {
-    background-color: white;
-    color: blue;
-  }
+.search button {
+  transform: translate(0%, -60%);
+}
+
+.search button:hover {
+  background-color: white;
+  color: blue;
+}
