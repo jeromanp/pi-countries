@@ -1,23 +1,23 @@
 .container {
     text-align: justify;
-    padding-left: 15%;
+    padding-left: 18%;
 }
 
 .container h1{
     color: aliceblue;
     font-size: medium;
-    padding-left: 35%;
+    padding-left: 25%;
     
 }
 
 .navbar {
-    background-color: rgba(6, 6, 7, 0.805);
+    background-color: rgba(6, 6, 7, 0.726);
     color: #fff;
     width: 200px;
     height: 100%;
     position: fixed;
     left: 0;
-    top: 20px;
+    top: 60px;
     z-index: 2;
 }
 
