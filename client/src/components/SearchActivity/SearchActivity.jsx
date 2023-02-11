@@ -1,12 +1,14 @@
 import style from "./SearchActivity.module.css";
-import { useDispatch, /*useSelector*/ } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { filterByActivity } from "../../redux/actions/actions";
+import CardActivity from "../CardActivity/CardActivity";
 
 const SearchActivity = () => {
   const dispatch = useDispatch();
-  // const countries = useSelector((state) => state.countries);
+  const country = useSelector((state) => state.countries);
   const [searchAct, setSearchAct] = useState("");
+console.log(country);
 
   const handleClick = () => {
     dispatch(filterByActivity(searchAct));
@@ -31,6 +33,25 @@ const SearchActivity = () => {
           🔍
         </button>
       </div>
+      <div>
+      {country ? (
+        <div>
+          <div className={style.text}>
+          <p>hola</p>
+          <img src={country.flag} alt={country.name} />
+          <p>Name: {country.name}</p>
+
+
+            
+          </div>
+        </div>
+      )
+       : (
+        <div>Loading...</div>
+      )}
+      </div>
+
+      
     </div>
   );
 };

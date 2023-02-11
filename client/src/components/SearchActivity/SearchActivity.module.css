@@ -11,6 +11,8 @@
   margin-bottom: 0.1rem;
   font-family: "Veteran";
   align-self: flex-start;
+  transform: translate(0%, 70%);
+
 }
 
 .container input {
