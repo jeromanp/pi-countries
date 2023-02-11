@@ -42,7 +42,7 @@ const Home = () => {
         return (
           <Card
             key={c.id}
-            // id={c.id}
+            id={c.id}
             name={c.name}
             flag={c.flag}
             continent={c.continent}
