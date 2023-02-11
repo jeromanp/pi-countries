@@ -2,7 +2,6 @@ import style from "./SearchActivity.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { filterByActivity } from "../../redux/actions/actions";
-import CardActivity from "../CardActivity/CardActivity";
 
 const SearchActivity = () => {
   const dispatch = useDispatch();
