@@ -6,7 +6,7 @@ import Detail from "./components/Detail/Detail";
 import NavBar from "./components/NavBar/NavBar";
 import About from "./components/About/About";
 import Activities from "./components/Activities/Activities";
-// import NotFound from "./components/NotFound/NotFound";
+import NotFound from "./components/NotFound/NotFound";
 import { Route, useLocation } from "react-router-dom";
 
 function App() {
@@ -22,6 +22,8 @@ function App() {
       <Route path="/about" component={About} />
       <Route path="/getactivities" component={Activities} />
       {/* <Route component={NotFound} /> */}
+      <Route path='/*' component={NotFound} />
+
     </div>
   );
 }
