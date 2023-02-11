@@ -1,7 +1,7 @@
 .card{
     border: 1px solid black;
     width: 300px;
-    height: 200px;
+    height: 210px;
     border-radius: 15px;
     display:inline-block;
     justify-content: center;
@@ -12,7 +12,7 @@
     background-color: rgba(0, 0, 0, 0.534);
     font-family: "Sansation_Light";
     color:antiquewhite;
-    overflow:hidden
+    overflow:hidden;
 }
 
 .card img {
@@ -23,7 +23,7 @@
     align-items:stretch;
     padding-top: 10px;
     padding-left: 0px;
-    transform: translate(90%, -210%);
+    transform: translate(120%, -230%);
 
     }
 
@@ -36,20 +36,17 @@
     justify-items: center;
     transform: translate(0%, 25%);
     overflow:hidden;
-    padding: 30px;
+    padding: 15px;
 }
 
 .icono{
-    transform: translate(10%, -25%);
-
+    align-items: center;
+    /* transform: translate(10%, -25%); */
 }
-
-
 
 .container img:hover{
     cursor: pointer;
 }
-
 .card:hover{
     background-color: rgba(0, 0, 0, 0.723);
     }
