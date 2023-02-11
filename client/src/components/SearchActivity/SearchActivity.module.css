@@ -22,6 +22,7 @@
   font-family: "Veteran";
   background-color: rgba(0, 0, 255, 0.66);
   transform: translate(0%, -50%);
+  color: antiquewhite;
 }
 
 .container button {
