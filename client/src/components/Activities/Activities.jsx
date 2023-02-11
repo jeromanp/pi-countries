@@ -20,14 +20,16 @@ const Activities = (props) => {
       <div>
         <button onClick={backtoHome}>To Home</button>
       </div>
-      <SearchActivity />
-      <h1>All Activities</h1>
+
+      <div>
+        <SearchActivity />
+      </div>
       <div className={style.cardActivity}>
         {countries?.map((c) => {
           return (
             <CardActivity
               key={c.id}
-              //   id={c.id}
+              id={c.id}
               name={c.name}
               flag={c.flag}
               continent={c.continent}
@@ -41,7 +43,6 @@ const Activities = (props) => {
           );
         })}
       </div>
-
     </div>
   );
 };
