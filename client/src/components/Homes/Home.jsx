@@ -36,7 +36,6 @@ const Home = () => {
       <nav className={style.navbar}>
         <SearchCountry />
       </nav>
-      <h1>Click on the flag to see more</h1>
       
       {currentCharacters?.map((c) => {
         return (
