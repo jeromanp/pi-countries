@@ -36,11 +36,8 @@ const Home = () => {
       <nav className={style.navbar}>
         <SearchCountry />
       </nav>
-      <Paginado
-        charactersPerPage={charactersPerPage}
-        countries={countries.length}
-        paginado={paginado}
-      />
+      <h1>Click on the flag to see more</h1>
+      
       {currentCharacters?.map((c) => {
         return (
           <Card
@@ -55,6 +52,11 @@ const Home = () => {
           />
           );
         })}
+        <Paginado
+        charactersPerPage={charactersPerPage}
+        countries={countries.length}
+        paginado={paginado}
+      />
       <div>
       </div>
     </div>

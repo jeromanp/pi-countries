@@ -3,6 +3,13 @@
     padding-left: 15%;
 }
 
+.container h1{
+    color: aliceblue;
+    font-size: medium;
+    padding-left: 35%;
+    
+}
+
 .navbar {
     background-color: rgba(6, 6, 7, 0.805);
     color: #fff;
