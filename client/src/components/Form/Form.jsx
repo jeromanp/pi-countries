@@ -157,7 +157,15 @@ const Form = () => {
 
         <div>
           <label>Season: </label>
-          <select name="season" value={form.season} onChange={handleChange}>
+          <select 
+            name="season" 
+            // value={form.season} 
+            onChange={handleChange} 
+            defaultValue={"Default"}
+            >
+          <option value="Default" disabled>
+              Select Season
+            </option>
             <option value="Spring">Spring</option>
             <option value="Summer">Summer</option>
             <option value="Autumn">Autumn</option>
