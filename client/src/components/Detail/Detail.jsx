@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getCountry } from "../../redux/actions/actions";
+import Loading from "../Loading/Loading";
 
 const Detail = (props) => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const country = useSelector((state) => state.country);
+
+  console.log(country);
 
   function backtoHome() {
     return props.history.push("/home");
@@ -38,7 +41,9 @@ const Detail = (props) => {
           </div>
         </div>
       ) : (
-        <div>Loading...</div>
+        <div>
+          <Loading />
+        </div>
       )}
     </div>
   );
