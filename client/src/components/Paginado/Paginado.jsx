@@ -6,8 +6,8 @@ import Loading from "../Loading/Loading";
 const Paginado = ({ charactersPerPage, countries, paginado }) => {
   const pageNumbers = [];
 
-  for (let i = 0; i <= Math.ceil(countries / charactersPerPage); i++) {
-    pageNumbers.push(i + 1);
+  for (let i = 1; i <= Math.ceil(countries / charactersPerPage); i++) {
+    pageNumbers.push(i);
   }
 
   const [loading, setLoading] = useState(true);
