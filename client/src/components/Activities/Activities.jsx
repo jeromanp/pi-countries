@@ -6,8 +6,8 @@ import CardActivity from "../CardActivity/CardActivity";
 // import { useDispatch } from "react-redux";
 
 const Activities = (props) => {
-  const countries = useSelector((state) => state.countries);
-  console.log(countries);
+  const activity = useSelector((state) => state.countries);
+  console.log(activity);
 
   //   const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const Activities = (props) => {
         <SearchActivity />
       </div>
       <div className={style.cardActivity}>
-        {countries?.map((c) => {
+        {activity?.map((c) => {
           return (
             <CardActivity
               key={c.id}
