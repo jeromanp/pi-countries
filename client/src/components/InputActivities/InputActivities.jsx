@@ -1,7 +1,7 @@
 import style from "./inputActivities.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { filterByActivity, getAllActivity } from "../../redux/actions/actions";
+import {  getAllActivity } from "../../redux/actions/actions";
 import CardActivity from "../CardActivity/CardActivity";
 
 const InputActivities = () => {
