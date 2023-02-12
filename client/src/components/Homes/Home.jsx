@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountries } from "../../redux/actions/actions";
 import SearchCountry from "../SearchCountry/SearchCountry";
-// import SearchActivity from "../SearchActivity/SearchActivity";
 import Paginado from "../Paginado/Paginado";
 import Card from "../Card/Card";
+import Loading from "../Loading/Loading";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,13 +23,20 @@ const Home = () => {
     indexOfLastCharacter
   );
 
+  const [loading, setLoading] = useState(true);
+
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
   useEffect(() => {
     dispatch(getCountries());
-  }, [dispatch]);
+    setLoading(false);
+    }, [dispatch]);
+
+    if (loading) {
+      return <Loading />;
+      }
 
   return (
     <div className={style.container}>
