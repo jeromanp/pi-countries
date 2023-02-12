@@ -12,17 +12,20 @@ const InputActivities = () => {
 
   console.log(activity);
 
+
   useEffect(() => {
     dispatch(getAllActivity());
   }, [dispatch]);
 
-  function handleSelect(event) {
+function handleSelect(event) {
     event.preventDefault();
-    const { name, value } = event.target;
-    if (name === "Select Activity") {
-      dispatch(filterByActivity(value));
+    const { value } = event.target;
+    if (value !== "Default") {
       setSelectedActivity(activity.find((act) => act.name === value));
       setSelectedValue(value);
+    } else {
+      setSelectedActivity({});
+      setSelectedValue("Default");
     }
   }
 
@@ -31,7 +34,7 @@ const InputActivities = () => {
       <select
         name="Select Activity"
         value={selectedValue}
-        defaultValue={"Default"}
+        // defaultValue={"Default"}
         onChange={handleSelect}
       >
         <option value="Default" disabled>
