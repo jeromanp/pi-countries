@@ -13,7 +13,7 @@ import {
 const initialState = {
   countries: [],
   allCountries: [],
-  filterCountries: [],
+  filter: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -108,10 +108,10 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_BY_ACTIVITY:
       return {
         ...state,
-        countries: action.payload,
+        filter: action.payload,
       };
     case GET_ALL_ACTIVITIES:
-      return { ...state, countries: action.payload };
+      return { ...state, filter: action.payload };
 
     case RESET_STATE:
       const init = [...state.allCountries];
