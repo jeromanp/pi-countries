@@ -1,6 +1,6 @@
 import style from "./SearchCountry.module.css";
-import { useState } from "react";
-import { useDispatch, /*useSelector*/ } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   searchCountry,
@@ -9,37 +9,23 @@ import {
   orderPopulation,
   resetState,
   getAllActivity,
-  // filterByActivity
 } from "../../redux/actions/actions";
 import InputActivities from "../InputActivities/InputActivities";
 
 const SearchCountry = () => {
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState("");
-  // const [searchActivity, setSearchActivity] = useState("")
-  // const activity = useSelector((state) => state.filter);
-  // console.log(activity);
 
   const handleInputSearchCountry = (e) => {
-    e.preventDefault()  //revisar
+    e.preventDefault();
     setSearchName(e.target.value);
   };
 
   const handleClickSearchCountry = (e) => {
-    e.preventDefault() ///revisar
+    e.preventDefault();
     dispatch(searchCountry(searchName));
     setSearchName("");
   };
-
-  // const handleInputSearchActivity = (e) => {
-  //   e.preventDefault()
-  //   setSearchActivity(e.target.value)
-  // }
-
-  // const handleClickSearchActivity = () =>{
-  //   dispatch(filterByActivity(searchActivity))
-  //   setSearchActivity("")
-  // }
 
   function handleSelect(event) {
     event.preventDefault();
@@ -60,6 +46,10 @@ const SearchCountry = () => {
     dispatch(getAllActivity());
   };
 
+  useEffect(() => {
+    dispatch(getAllActivity());
+  }, [dispatch]);
+
   return (
     <div>
       <div className={style.container}>
@@ -67,7 +57,6 @@ const SearchCountry = () => {
           <button onClick={() => dispatch(resetState())}>Clear Filters</button>
           <hr />
         </div>
-
 
         <h1>Search Country</h1>
         <div className={style.search}>
@@ -80,15 +69,14 @@ const SearchCountry = () => {
           <button className={style.search} onClick={handleClickSearchCountry}>
             🔍
           </button>
-
         </div>
-          <hr />
+        <hr />
 
         <h1>Search Activity</h1>
         <div className={style.search}>
-          <InputActivities />  
+          <InputActivities />
         </div>
-          <br />      
+        <br />
 
         <div>
           <hr />
