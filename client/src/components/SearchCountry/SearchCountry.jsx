@@ -1,6 +1,6 @@
 import style from "./SearchCountry.module.css";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   searchCountry,
@@ -16,6 +16,8 @@ const SearchCountry = () => {
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState("");
   const [searchActivity, setSearchActivity] = useState("")
+  const activity = useSelector((state) => state.countries);
+  console.log(activity);
 
   const handleInputSearchCountry = (e) => {
     setSearchName(e.target.value);

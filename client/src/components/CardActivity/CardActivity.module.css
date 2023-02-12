@@ -1,7 +1,7 @@
 .card{
     border: 1px solid black;
     width: 300px;
-    height: 310px;
+    height: 210px;
     border-radius: 15px;
     display:inline-block;
     justify-content: center;
@@ -11,19 +11,21 @@
     justify-content: space-between; 
     background-color: rgba(0, 0, 0, 0.534);
     font-family: "Sansation_Light";
-    color:antiquewhite;
+    color:rgb(6, 17, 165);
     overflow:hidden;
+    background-image: url("../../images/travel-the-world-.jpg");
+    background-size:contain;
 }
 
 .card img {
-    width: 90px;
-    height:70px;
+    width: 150px;
+    height:100px;
     margin: auto;
     margin-left: auto;
     align-items:stretch;
     padding-top: 10px;
     padding-left: 0px;
-    transform: translate(120%, -270%);
+    transform: translate(80%, -200%);
 
     }
 
@@ -31,12 +33,13 @@
     direction: ltr;
     align-items: center;
     justify-content: center;
-    size: 10px;
-    font-size: small;
+    size: 20px;
+    font-size: medium;
     justify-items: center;
-    transform: translate(10%, 15%);
+    transform: translate(0%, 0%);
     overflow:hidden;
     padding: 15px;
+    font-weight: bold;
 }
 
 .content{
@@ -45,8 +48,8 @@
 }
 
 .content img{
-width: 100px;
-  height: 60px;
+width: 150px;
+  height: 90px;
   margin: auto;
   margin-left: auto;
   align-items: stretch;

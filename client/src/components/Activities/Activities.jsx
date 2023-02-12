@@ -40,8 +40,8 @@ const Activities = (props) => {
               difficulty={c.difficulty}
               duration={c.duration}
               season={c.season}
-              src="https://img.freepik.com/vector-premium/diseno-viajes-turismo_24908-34483.jpg"
-              alt="img"
+              // src="https://img.freepik.com/vector-premium/diseno-viajes-turismo_24908-34483.jpg"
+              // alt="img"
               // activityId={c.activityId}
               // activityName={c.activityName}
               // countryId={c.countryId}
