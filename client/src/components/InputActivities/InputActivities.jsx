@@ -1,25 +1,28 @@
-import style from "./inputActivities.module.css"
+import style from "./inputActivities.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterByActivity, getAllActivity } from "../../redux/actions/actions";
+import CardActivity from "../CardActivity/CardActivity";
 
 const InputActivities = () => {
-  const [selectedName, setSelectedName] = useState("");
   const [selectedActivity, setSelectedActivity] = useState({});
+  const [selectedValue, setSelectedValue] = useState("Default");
   const activity = useSelector((state) => state.filter);
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   console.log(activity);
 
-  useEffect(()=>{
-    dispatch(getAllActivity())
-  },[dispatch])
+  useEffect(() => {
+    dispatch(getAllActivity());
+  }, [dispatch]);
 
-  function handleSelect(e) {
-    e.preventDefault();
-    const { name, value } = e.target;
+  function handleSelect(event) {
+    event.preventDefault();
+    const { name, value } = event.target;
     if (name === "Select Activity") {
-        dispatch(filterByActivity(value));
+      dispatch(filterByActivity(value));
+      setSelectedActivity(activity.find((act) => act.name === value));
+      setSelectedValue(value);
     }
   }
 
@@ -27,7 +30,7 @@ const InputActivities = () => {
     <div className={style.container}>
       <select
         name="Select Activity"
-        // value={selectedName}
+        value={selectedValue}
         defaultValue={"Default"}
         onChange={handleSelect}
       >
@@ -41,12 +44,16 @@ const InputActivities = () => {
           </option>
         ))}
       </select>
+
       {selectedActivity.id && (
-        <div>
-          <p>ID: {selectedActivity.id}</p>
-          <p>Name: {selectedActivity.name}</p>
-          <p>Flag: {selectedActivity.flag}</p>
-        </div>
+        <CardActivity
+          id={selectedActivity.id}
+          name={selectedActivity.name}
+          season={selectedActivity.season}
+          difficulty={selectedActivity.difficulty}
+          duration={selectedActivity.duration}
+          countryFlag={selectedActivity.Countries}
+        />
       )}
     </div>
   );
