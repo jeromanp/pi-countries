@@ -1,17 +1,25 @@
 import style from "./Activities.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import CardActivity from "../CardActivity/CardActivity";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getAllActivity } from "../../redux/actions/actions";
+import Loading from "../Loading/Loading";
 
 const Activities = (props) => {
   const activity = useSelector((state) => state.filter);
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState(true);
+
   console.log(activity);
 
-  useEffect(()=>{
-    dispatch(getAllActivity())
-  },[dispatch])
+  useEffect(() => {
+    dispatch(getAllActivity());
+    setLoading(false);
+    }, [dispatch]);
+
+    if (loading) {
+      return <Loading />;
+      }
 
   function backtoHome() {
     return props.history.push("/home");
