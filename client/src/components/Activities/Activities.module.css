@@ -10,7 +10,7 @@
   .container h1 {
     text-align: center;
     align-items: center;
-    color: antiquewhite;
+    color: rgb(238, 232, 225);
     /* transform: translate(0%, 0%); */
   }
 
@@ -19,10 +19,11 @@
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 9px;
     cursor: pointer;
     margin-bottom: 0px;
-    margin-top: 5px;
+    margin-top: 25px;
+    margin-left: 50px;
   }
 
   .container button:hover {
