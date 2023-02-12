@@ -13,9 +13,7 @@ const CardActivity = (props) => {
       </div>
       <div className={style.content}>
         {props.countryFlag && <img src={props.countryFlag} alt={props.countryName} />}       
-
       </div>
-      <div className={style.icono}>{props.src && <img src={props.src} alt={props.name} />}</div>
     </div>
   );
 };
