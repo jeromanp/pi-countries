@@ -1,0 +1,14 @@
+.container select {
+    font-family: "Typewriter_Font";
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border: 2px solid blue;
+    background-color: rgba(0, 0, 255, 0.229);
+    color: antiquewhite;
+  
+    border-radius: 9px;
+    appearance: none;
+  }
