@@ -107,36 +107,10 @@ export function filterByActivity(name) {
       const search = apiData.data;
       //me trae las propiedades segun la busqueda
       console.log(search);
-      const obj={}
-      const newArray = search.map((activity) => {
-        activity.Countries.map((country) => {
-          // array.push(country.id,country.name, country.flag)
-          obj.countryId = country.id
-          obj.countryName = country.name
-          obj.countryFlag = country.flag
-          return {
-            id: country.id,
-            name: country.name,
-            flag: country.flag,
-            array:obj
-          };
-        });
-        // array.push(activity.id, activity.name)
-        obj.activityId = activity.id
-        obj.activityName = activity.name
-        return {
-          id: activity.id,
-          name: activity.name,
-          Countries: obj,
-        };
-      });
-      console.log(newArray);
-      console.log(obj);
-
       dispatch({
-        type: FILTER_BY_ACTIVITY,
-        payload: [obj],
-      });
+        type:FILTER_BY_ACTIVITY, 
+        payload:search,
+      })       
     } catch (error) {
       alert(error.response.data.error);
     }
