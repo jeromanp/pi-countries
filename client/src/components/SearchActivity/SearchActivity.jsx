@@ -5,9 +5,9 @@ import { filterByActivity } from "../../redux/actions/actions";
 
 const SearchActivity = () => {
   const dispatch = useDispatch();
-  const country = useSelector((state) => state.countries);
-  const [searchAct, setSearchAct] = useState("");
-console.log(country);
+  const activity = useSelector((state) => state.countries);
+  const [searchAct, setSearchAct] = useState([]);
+console.log(activity);
 
   const handleClick = () => {
     dispatch(filterByActivity(searchAct));
@@ -33,12 +33,13 @@ console.log(country);
         </button>
       </div>
       <div>
-      {country ? (
+      {activity ? (
         <div>
           <div className={style.text}>
-          <p>hola</p>
-          <img src={country.flag} alt={country.name} />
-          <p>Name: {country.name}</p>
+          <img src={activity.flag} alt={activity.name} />
+          <p>{activity.id}</p>
+          <p>Name: {activity.name}</p>
+
 
 
             
