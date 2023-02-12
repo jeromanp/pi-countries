@@ -1,6 +1,6 @@
 import style from "./SearchCountry.module.css";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, /*useSelector*/ } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   searchCountry,
@@ -9,33 +9,37 @@ import {
   orderPopulation,
   resetState,
   getAllActivity,
-  filterByActivity
+  // filterByActivity
 } from "../../redux/actions/actions";
+import InputActivities from "../InputActivities/InputActivities";
 
 const SearchCountry = () => {
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState("");
-  const [searchActivity, setSearchActivity] = useState("")
-  const activity = useSelector((state) => state.countries);
-  console.log(activity);
+  // const [searchActivity, setSearchActivity] = useState("")
+  // const activity = useSelector((state) => state.filter);
+  // console.log(activity);
 
   const handleInputSearchCountry = (e) => {
+    e.preventDefault()  //revisar
     setSearchName(e.target.value);
   };
 
-  const handleClickSearchCountry = () => {
+  const handleClickSearchCountry = (e) => {
+    e.preventDefault() ///revisar
     dispatch(searchCountry(searchName));
     setSearchName("");
   };
 
-  const handleInputSearchActivity = (e) => {
-    setSearchActivity(e.target.value)
-  }
+  // const handleInputSearchActivity = (e) => {
+  //   e.preventDefault()
+  //   setSearchActivity(e.target.value)
+  // }
 
-  const handleClickSearchActivity = () =>{
-    dispatch(filterByActivity(searchActivity))
-    setSearchActivity("")
-  }
+  // const handleClickSearchActivity = () =>{
+  //   dispatch(filterByActivity(searchActivity))
+  //   setSearchActivity("")
+  // }
 
   function handleSelect(event) {
     event.preventDefault();
@@ -76,26 +80,20 @@ const SearchCountry = () => {
           <button className={style.search} onClick={handleClickSearchCountry}>
             🔍
           </button>
+
         </div>
+          <hr />
 
         <h1>Search Activity</h1>
         <div className={style.search}>
-        <input
-            type="text"
-            value={searchActivity}
-            onChange={handleInputSearchActivity}
-            placeholder="Activity"
-          />
-          <button className={style.search} onClick={handleClickSearchActivity}>
-            🔍
-          </button>
+          <InputActivities />  
         </div>
+          <br />      
 
         <div>
           <hr />
           <h1>Filters</h1>
-          {/* <br /> */}
-          {/* <br /> */}
+          <br />
           <select
             name="Filter Continent"
             defaultValue={"Default"}
