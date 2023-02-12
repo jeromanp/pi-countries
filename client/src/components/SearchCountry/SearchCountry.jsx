@@ -9,20 +9,31 @@ import {
   orderPopulation,
   resetState,
   getAllActivity,
+  filterByActivity
 } from "../../redux/actions/actions";
 
 const SearchCountry = () => {
   const dispatch = useDispatch();
   const [searchName, setSearchName] = useState("");
+  const [searchActivity, setSearchActivity] = useState("")
 
-  const handleSearch = (e) => {
+  const handleInputSearchCountry = (e) => {
     setSearchName(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleClickSearchCountry = () => {
     dispatch(searchCountry(searchName));
     setSearchName("");
   };
+
+  const handleInputSearchActivity = (e) => {
+    setSearchActivity(e.target.value)
+  }
+
+  const handleClickSearchActivity = () =>{
+    dispatch(filterByActivity(searchActivity))
+    setSearchActivity("")
+  }
 
   function handleSelect(event) {
     event.preventDefault();
@@ -51,16 +62,29 @@ const SearchCountry = () => {
           <hr />
         </div>
 
-        <h1>Search Country</h1>
 
+        <h1>Search Country</h1>
         <div className={style.search}>
           <input
             type="text"
             value={searchName}
-            onChange={handleSearch}
+            onChange={handleInputSearchCountry}
             placeholder="Country"
           />
-          <button className={style.search} onClick={handleClick}>
+          <button className={style.search} onClick={handleClickSearchCountry}>
+            🔍
+          </button>
+        </div>
+
+        <h1>Search Activity</h1>
+        <div className={style.search}>
+        <input
+            type="text"
+            value={searchActivity}
+            onChange={handleInputSearchActivity}
+            placeholder="Activity"
+          />
+          <button className={style.search} onClick={handleClickSearchActivity}>
             🔍
           </button>
         </div>
@@ -68,8 +92,8 @@ const SearchCountry = () => {
         <div>
           <hr />
           <h1>Filters</h1>
-          <br />
-          <br />
+          {/* <br /> */}
+          {/* <br /> */}
           <select
             name="Filter Continent"
             defaultValue={"Default"}
