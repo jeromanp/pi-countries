@@ -55,7 +55,7 @@ width: 150px;
   align-items: stretch;
   padding-top: 10px;
   padding-left: 0px;
-  transform: translate(150%, -80%);
+  transform: translate(80%, -50%);
   object-fit: cover;
 }
 
