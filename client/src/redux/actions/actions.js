@@ -107,9 +107,24 @@ export function filterByActivity(name) {
       const search = apiData.data;
       //me trae las propiedades segun la busqueda
       console.log(search);
+      let countriesProperties = [];
+
+      search.forEach(element => {
+        element.Countries.forEach(country => {
+          let countryProperties = {
+            id: country.id,
+            name: country.name,
+            flag: country.flag
+          };
+          countriesProperties.push(countryProperties);
+        });
+      });
+      
+      console.log(countriesProperties);
+      // console.log(result)
       dispatch({
         type:FILTER_BY_ACTIVITY, 
-        payload:search,
+        payload:countriesProperties,
       })       
     } catch (error) {
       alert(error.response.data.error);
