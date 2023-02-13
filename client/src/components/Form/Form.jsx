@@ -2,7 +2,10 @@ import style from "./Form.module.css";
 import axios from "axios";
 import { useState } from "react";
 
-const Form = () => {
+const Form = (props) => {
+   function backtoHome() {
+    return props.history.push("/home");
+  }
   ////////////////
 
   function validate(inputs) {
@@ -101,6 +104,9 @@ const Form = () => {
 
   return (
     <div className={style.container}>
+       <div>
+        <button onClick={backtoHome}>To Home</button>
+      </div>
       <h1>Create Activity</h1>
       <form
         onSubmit={(e) => {
