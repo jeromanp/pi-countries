@@ -1,25 +1,31 @@
 .contain {
     width: 500px;
-    margin: 50px auto;
+    margin: 30px auto;
     text-align: center;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.678);
-    color:antiquewhite;
+    color:rgb(242, 239, 236);
     text-align: justify;
   font-family: "Sansation_Light";
+  /* background-image: url("../../images//travel-the-world-.jpg");
+  background-size: 20 contain;
+  background-position: center; */
 
   }
   
   .contain h1 {
     font-size: 28px;
     margin-bottom: 30px;
+    font-weight: bolder;
   }
   
   .contain p {
     font-size: 18px;
     margin-bottom: 20px;
+    font-weight: bolder;
+
   }
   
   .contain ul {
@@ -36,7 +42,7 @@
   
   .contain a {
     text-decoration: none;
-    color: #2196f3;
+    color: #dbe1e7;
   }
   
   .contain img {

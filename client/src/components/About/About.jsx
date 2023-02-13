@@ -16,12 +16,14 @@ const About = () => {
         <p>Contacto:</p>
 
         <ul>
-          <li>
-            Email:
-            <a href="mailto:jeduardo.roman69@gmail.com">
-              jeduardo.roman69@gmail.com
-            </a>
-          </li>
+          <p>
+            <li>
+              Email:
+              <a href="mailto:jeduardo.roman69@gmail.com">
+                jeduardo.roman69@gmail.com
+              </a>
+            </li>
+          </p>
 
           <li>
             <p>
@@ -42,8 +44,11 @@ const About = () => {
           <li>
             <p>
               Github
-              <a href="https://github.com/jeromanp" target="_blank"
-              rel="noreferrer">
+              <a
+                href="https://github.com/jeromanp"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img
                   src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                   alt="Github Logo"
