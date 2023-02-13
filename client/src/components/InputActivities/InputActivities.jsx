@@ -1,8 +1,9 @@
 import style from "./inputActivities.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  getAllActivity } from "../../redux/actions/actions";
-import CardActivity from "../CardActivity/CardActivity";
+import {  filterByActivity, getAllActivity } from "../../redux/actions/actions";
+// import CardActivity from "../CardActivity/CardActivity";
+import Card from "../Card/Card"
 
 const InputActivities = () => {
   const [selectedActivity, setSelectedActivity] = useState({});
@@ -12,6 +13,7 @@ const InputActivities = () => {
 
   console.log(activity);
 
+
   useEffect(() => {
     dispatch(getAllActivity());
   }, [dispatch]);
@@ -20,8 +22,9 @@ function handleSelect(event) {
     event.preventDefault();
     const { value } = event.target;
     if (value !== "Default") {
-      setSelectedActivity(activity.find((act) => act.name === value));
-      console.log(setSelectedActivity(activity.find((act) => act.name === value)));
+      // setSelectedActivity(activity.find((act) => act.name === value));
+    dispatch(filterByActivity(value))
+      // console.log(setSelectedActivity(activity.find((act) => act.name === value)));
       // dispatch(filterByActivity(value))
       // setSelectedActivity(value)
       setSelectedValue(value);
@@ -61,13 +64,9 @@ function handleSelect(event) {
       </select>
 
       {selectedActivity.id && (
-        <CardActivity
+        <Card
           id={selectedActivity.id}
-          name={selectedActivity.name}
-          season={selectedActivity.season}
-          difficulty={selectedActivity.difficulty}
-          duration={selectedActivity.duration}
-          countryName={selectedActivity.Countries[0].name}
+          name={selectedActivity.name}   
 
         />
       )}
