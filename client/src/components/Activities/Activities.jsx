@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { getAllActivity } from "../../redux/actions/actions";
 import Loading from "../Loading/Loading";
 import InputActivities from "../InputActivities/InputActivities";
-import Card from "../Card/Card";
 
 const Activities = (props) => {
   const activity = useSelector((state) => state.filter);
