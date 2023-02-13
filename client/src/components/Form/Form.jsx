@@ -6,6 +6,10 @@ const Form = (props) => {
    function backtoHome() {
     return props.history.push("/home");
   }
+
+  function toActivities() {
+    return props.history.push("/getactivities");
+  }
   ////////////////
 
   function validate(inputs) {
@@ -106,6 +110,7 @@ const Form = (props) => {
     <div className={style.container}>
        <div>
         <button onClick={backtoHome}>To Home</button>
+        <button onClick={toActivities}>View Activities</button>
       </div>
       <h1>Create Activity</h1>
       <form

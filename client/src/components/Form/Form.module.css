@@ -1,3 +1,9 @@
+.container{
+  display: flex;
+    flex-direction: column;
+    margin-bottom: -5px;
+}
+
 
   .container form {
     display: flex;
@@ -5,15 +11,16 @@
     justify-content: center;
     align-items: center;
     width: 400px;
-    margin: 1px auto;
-    padding: 10px;
+    margin: 10px auto;
+    padding: 5px;
     border: 3px solid #ccc;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.641);
     background-image: url("../../images//travel-the-world-.jpg");
-    background-size: 20 contain;
+    background-size: contain;
     background-position: center;
     color:antiquewhite;
+    flex-direction: column;
 
   }
 
@@ -26,14 +33,15 @@
   }
 
   .container div {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     margin-bottom: -5px;
   }
 
   .container label {
     font-weight: bold;
     margin-bottom: 0px;
+    background-color: rgba(0, 0, 255, 0.364);
   }
 
   .container input {
@@ -44,7 +52,7 @@
   }
 
   .container button {
-    padding: 10px 20px;
+    padding: 10px 50px;
     border-radius: 5px;
     background-color: blue;
     color: #fff;
@@ -63,6 +71,7 @@
     width: 100%;
     flex-grow: 1;
     transform: translate(-75%, -40%);
+    font-family: fantasy;
 }
 
   .warning {
