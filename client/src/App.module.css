@@ -4,12 +4,18 @@
 
 body{
   background-image: url("./images/47972-mapa-mundi.jpg");
-  background-size:cover;
+  background-size:contain;
   background-position: center;
-  background-repeat: repeat-y;
+  /* background-repeat: repeat-y; */
   height: 100vh;
   font-family: "Happy_Phantom";
   /* font-family: "Sansation_Light"; */
+  animation: background-animation 120s linear infinite;
+}
+
+@keyframes background-animation {
+  from { background-position: 0% center; }
+  to { background-position: 100% center; }
 }
 
 @font-face{
