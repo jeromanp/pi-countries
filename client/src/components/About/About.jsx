@@ -1,9 +1,15 @@
 import style from "./About.module.css";
 
-const About = () => {
+const About = (props) => {
+  function backtoHome() {
+    return props.history.push("/home");
+  }
   return (
     <div className={style.contain}>
       <div>
+        <button onClick={backtoHome}>To Home</button>
+      </div>
+      <div className={style.info}>
         <h1>Sobre el proyecto Countries</h1>
         <p>
           Proyecto Final Individual para aprobar el primer módulo de Labs del

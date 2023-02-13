@@ -15,39 +15,55 @@
 
   }
   
-  .contain h1 {
-    font-size: 28px;
-    margin-bottom: 30px;
+  .info h1 {
+    font-size: 25px;
+    margin-bottom: 25px;
     font-weight: bolder;
   }
   
-  .contain p {
+  .info p {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: bolder;
 
   }
   
-  .contain ul {
+  .info ul {
     list-style: none;
     padding: 0;
     margin-top: 20px;
   }
   
-  .contain li {
+  .info li {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
   }
   
-  .contain a {
+  .info a {
     text-decoration: none;
     color: #dbe1e7;
   }
   
-  .contain img {
+  .info img {
     height: 30px;
     margin-left: 10px;
     transform: translate(-120%, 10%);
 
+  }
+
+  .contain button {
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    margin-top: 10px;
+  }
+
+  .contain button:hover {
+    background-color: white;
+    color: blue;
   }
