@@ -119,9 +119,8 @@ export function filterByActivity(name) {
           countriesProperties.push(countryProperties);
         });
       });
-      
+      //me obtiene name y flag
       console.log(countriesProperties);
-      // console.log(result)
       dispatch({
         type:FILTER_BY_ACTIVITY, 
         payload:countriesProperties,
