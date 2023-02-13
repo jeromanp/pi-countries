@@ -10,7 +10,6 @@ import {
   resetState,
   getAllActivity,
 } from "../../redux/actions/actions";
-import InputActivities from "../InputActivities/InputActivities";
 
 const SearchCountry = () => {
   const dispatch = useDispatch();
