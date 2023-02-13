@@ -4,10 +4,11 @@ import CardActivity from "../CardActivity/CardActivity";
 import { useEffect, useState } from "react";
 import { getAllActivity } from "../../redux/actions/actions";
 import Loading from "../Loading/Loading";
+import InputActivities from "../InputActivities/InputActivities";
 
 const Activities = (props) => {
   const activity = useSelector((state) => state.filter);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
   console.log(activity);
@@ -15,11 +16,11 @@ const Activities = (props) => {
   useEffect(() => {
     dispatch(getAllActivity());
     setLoading(false);
-    }, [dispatch]);
+  }, [dispatch]);
 
-    if (loading) {
-      return <Loading />;
-      }
+  if (loading) {
+    return <Loading />;
+  }
 
   function backtoHome() {
     return props.history.push("/home");
@@ -31,7 +32,17 @@ const Activities = (props) => {
         <button onClick={backtoHome}>To Home</button>
       </div>
 
-      <div><h1>All Activities</h1></div>
+      <div className={style.h2}>
+        <h2>Search Activity</h2>        
+      </div>
+
+      <div className={style.card}>
+        <InputActivities />        
+      </div>
+
+      <div>
+        <h1>All Activities</h1>
+      </div>
       <div className={style.cardActivity}>
         {activity?.map((c) => {
           return (
