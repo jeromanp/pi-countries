@@ -56,7 +56,10 @@ const Activities = (props) => {
               key={c.id}
               id={c.id}
               name={c.name}  
-              flag={c.flag}          
+              flag={c.flag}  
+              difficulty={c.difficulty}    
+              duration={c.duration} 
+              season={c.season}   
              
             />
           );
