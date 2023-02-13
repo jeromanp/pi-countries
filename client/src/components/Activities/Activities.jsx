@@ -26,18 +26,23 @@ const Activities = (props) => {
     return props.history.push("/home");
   }
 
+  function toActivitiesCreate() {
+    return props.history.push("/activities");
+  }
+
   return (
     <div className={style.container}>
       <div>
         <button onClick={backtoHome}>To Home</button>
+        <button onClick={toActivitiesCreate}>Create New Activity</button>
       </div>
 
       <div className={style.h2}>
-        <h2>Search Activity</h2>        
+        <h2>Search Activity</h2>
       </div>
 
       <div className={style.card}>
-        <InputActivities />        
+        <InputActivities />
       </div>
 
       <div>
@@ -50,22 +55,16 @@ const Activities = (props) => {
               key={c.id}
               id={c.id}
               name={c.name}
-              flag={c.flag}
-              continent={c.continent}
+              countries={c.Countries.map((e) => {
+                return {
+                  idC: e.id,
+                  name: e.name,
+                  flag: e.flag,
+                };
+              })}
               difficulty={c.difficulty}
               duration={c.duration}
               season={c.season}
-              countries={
-                Array.isArray(c.Countries)
-                  ? c.Countries.map((e) => {
-                      return {
-                        id: e.id,
-                        name: e.name,
-                        flag: e.flag,
-                      };
-                    })
-                  : []
-              }
             />
           );
         })}
