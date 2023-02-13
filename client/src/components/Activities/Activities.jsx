@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getAllActivity } from "../../redux/actions/actions";
 import Loading from "../Loading/Loading";
 import InputActivities from "../InputActivities/InputActivities";
+import Card from "../Card/Card";
 
 const Activities = (props) => {
   const activity = useSelector((state) => state.filter);
@@ -51,20 +52,12 @@ const Activities = (props) => {
       <div className={style.cardActivity}>
         {activity?.map((c) => {
           return (
-            <CardActivity
+            <CardActivity            
               key={c.id}
               id={c.id}
-              name={c.name}
-              countries={c.Countries.map((e) => {
-                return {
-                  idC: e.id,
-                  name: e.name,
-                  flag: e.flag,
-                };
-              })}
-              difficulty={c.difficulty}
-              duration={c.duration}
-              season={c.season}
+              name={c.name}  
+              flag={c.flag}          
+             
             />
           );
         })}
