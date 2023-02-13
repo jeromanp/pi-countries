@@ -52,6 +52,8 @@ const Form = (props) => {
     season: "",
   });
 
+  console.log(form)
+
   const [error, setError] = useState({
     country: [],
     name: "",
@@ -143,10 +145,12 @@ const Form = (props) => {
         </div>
 
         <div>
-          <label>Difficulty: </label>
+          <label>Difficulty: {form.difficulty}</label>
           <input
-            type="number"
-            placeholder="Difficulty of the activity with a value between 1 and 5"
+            type="range"
+            min="1"
+            max="5"
+            step="1"           
             name="difficulty"
             value={form.difficulty}
             onChange={handleChange}
@@ -155,11 +159,13 @@ const Form = (props) => {
         </div>
 
         <div>
-          <label>Duration: </label>
+          <label>Duration: {form.duration} day(s) </label>
           <input
-            type="number"
+            type="range"
+            min="1"
+            max="31"
             name="duration"
-            placeholder="Duration of the activity between 1 and 31 days"
+            step="1"
             value={form.duration}
             onChange={handleChange}
           />

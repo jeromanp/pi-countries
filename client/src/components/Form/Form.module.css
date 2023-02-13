@@ -33,15 +33,15 @@
   }
 
   .container div {
-    /* display: flex; */
     /* flex-direction: column; */
     margin-bottom: -5px;
+    display:flexbox
   }
 
   .container label {
     font-weight: bold;
     margin-bottom: 0px;
-    background-color: rgba(0, 0, 255, 0.364);
+    background-color: rgba(69, 69, 131, 0.364);
   }
 
   .container input {
@@ -103,3 +103,4 @@
     background-color: white;
     color: blue;
   }
+
