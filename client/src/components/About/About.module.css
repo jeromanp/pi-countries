@@ -1,17 +1,17 @@
-.contain {
-    width: 500px;
-    margin: 30px auto;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+.contain {    
+  font-family: "Sansation_Light";
+  }
+
+  .conta{
     background-color: rgba(0, 0, 0, 0.678);
     color:rgb(242, 239, 236);
+    border: 1px solid #ccc;
+    margin: 30px auto;
     text-align: justify;
-  font-family: "Sansation_Light";
-  /* background-image: url("../../images//travel-the-world-.jpg");
-  background-size: 20 contain;
-  background-position: center; */
+    border-radius: 10px;
+    width: 900px;
+    padding: 10px;
+
 
   }
   
@@ -25,6 +25,7 @@
     font-size: 18px;
     margin-bottom: 15px;
     font-weight: bolder;
+    
 
   }
   
@@ -60,7 +61,8 @@
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 0px;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: 50px;
   }
 
   .contain button:hover {
