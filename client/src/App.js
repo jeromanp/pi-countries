@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className={style.container}>
-      {location.pathname !== "/*" && <NavBar /> }
+      {location.pathname === "/" ? null :<NavBar /> }
       <Switch>
         <Route exact path="/" component={Landindg} />
         <Route exact path="/home" render={() => <Home />} />
