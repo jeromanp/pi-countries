@@ -6,23 +6,24 @@ import Detail from "./components/Detail/Detail";
 import NavBar from "./components/NavBar/NavBar";
 import About from "./components/About/About";
 import Activities from "./components/Activities/Activities";
-// import NotFound from "./components/NotFound/NotFound";
-import { Route, useLocation } from "react-router-dom";
+import NotFound from "./components/NotFound/NotFound";
+import { Route, Switch, useLocation } from "react-router-dom";
 
 function App() {
   const location = useLocation();
 
   return (
     <div className={style.container}>
-      {location.pathname !== "/" && <NavBar />}
-      <Route exact path="/" component={Landindg} />
-      <Route path="/home" render={() => <Home />} />
-      <Route path="/detail/:id" component={Detail} />
-      <Route path="/activities" component={Form} />
-      <Route path="/about" component={About} />
-      <Route path="/getactivities" component={Activities} />
-      {/* <Route path='/*' component={NotFound} /> */}
-
+      {location.pathname !== "/*" && <NavBar /> }
+      <Switch>
+        <Route exact path="/" component={Landindg} />
+        <Route exact path="/home" render={() => <Home />} />
+        <Route exact path="/detail/:id" component={Detail} />
+        <Route exact path="/activities" component={Form} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/getactivities" component={Activities} />
+        <Route path="/*" component={NotFound} />
+      </Switch>
     </div>
   );
 }
