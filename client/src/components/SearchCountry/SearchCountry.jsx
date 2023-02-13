@@ -70,13 +70,6 @@ const SearchCountry = () => {
             🔍
           </button>
         </div>
-        <hr />
-
-        <h1>Search Activity</h1>
-        <div className={style.search}>
-          <InputActivities />
-        </div>
-        <br />
 
         <div>
           <hr />
