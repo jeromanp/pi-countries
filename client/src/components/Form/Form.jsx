@@ -26,20 +26,23 @@ const Form = (props) => {
   function validate(inputs) {
     const errors = {};
     const lettersOnly = /^[a-zA-Z,]+$/;
-    const letterAndCo = /^[a-zA-Z]+$/;
+    const letterAndCo = /^[\w ]+$/;
 
     if (!inputs.country.length) {
       errors.country = "Se requiere al menos un country";
     } else {
       inputs.country.forEach((country, index) => {
         if (!lettersOnly.test(country)) {
-          errors[`country${index}`] = "El country debe tener solo letras";
+          errors[`country${index}`] =
+            "El country debe tener solo letras y números";
         }
       });
     }
 
     if (!inputs.name) {
       errors.name = "Se requiere un nombre de la actividad";
+    } else if (inputs.name.length > 15) {
+      errors.name = "El nombre debe tener menos de 15 caracteres";
     } else if (!letterAndCo.test(inputs.name)) {
       errors.name = "El name debe tener solo letras";
     } else if (inputs.difficulty < 1 || inputs.difficulty > 5) {
@@ -115,7 +118,7 @@ const Form = (props) => {
         season: "",
       });
     } else {
-      return alert("Debes corregir los datos");
+      return alert("Debes corregir/agregar los datos");
     }
   }
 
@@ -139,12 +142,8 @@ const Form = (props) => {
         }}
       >
         <div>
-        <label>Countries: </label>
-          <select 
-            defaultValue={"Default"}
-            
-
-          onChange={(e) => handleSelect(e)} >
+          <label>Countries: </label>
+          <select defaultValue={"Default"} onChange={(e) => handleSelect(e)}>
             <option value="Default" disabled>
               Select Country
             </option>
@@ -155,7 +154,7 @@ const Form = (props) => {
             ))}
           </select>
           <hr />
-       
+
           {/* <label>Country(es): </label> */}
           <input
             type="text"
@@ -176,7 +175,6 @@ const Form = (props) => {
             name="name"
             value={form.name}
             onChange={handleChange}
-           
           />
           <p className={style.danger}>{error.name}</p>
         </div>
