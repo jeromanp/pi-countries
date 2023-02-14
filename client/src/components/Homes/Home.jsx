@@ -32,18 +32,18 @@ const Home = () => {
   useEffect(() => {
     dispatch(getCountries());
     setLoading(false);
-    }, [dispatch]);
+  }, [dispatch]);
 
-    if (loading) {
-      return <Loading />;
-      }
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className={style.container}>
       <nav className={style.navbar}>
         <SearchCountry />
       </nav>
-      
+
       {currentCharacters?.map((c) => {
         return (
           <Card
@@ -56,14 +56,17 @@ const Home = () => {
             duration={c.duration}
             season={c.season}
           />
-          );
-        })}
-        <Paginado
-        charactersPerPage={charactersPerPage}
-        countries={countries.length}
-        paginado={paginado}
-      />
+        );
+      })}
+
       <div>
+        <footer>
+          <Paginado
+            charactersPerPage={charactersPerPage}
+            countries={countries.length}
+            paginado={paginado}
+          />
+        </footer>
       </div>
     </div>
   );
