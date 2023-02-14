@@ -25,26 +25,17 @@ const Form = (props) => {
 
   function validate(inputs) {
     const errors = {};
-    const lettersOnly = /^[a-zA-Z,]+$/;
+    // const lettersOnly = /^[a-zA-Z,]+$/;
     const letterAndCo = /^[\w ]+$/;
 
     if (!inputs.country.length) {
       errors.country = "Se requiere al menos un country";
-    } else {
-      inputs.country.forEach((country, index) => {
-        if (!lettersOnly.test(country)) {
-          errors[`country${index}`] =
-            "El country debe tener solo letras y números";
-        }
-      });
-    }
-
-    if (!inputs.name) {
-      errors.name = "Se requiere un nombre de la actividad";
-    } else if (inputs.name.length > 15) {
-      errors.name = "El nombre debe tener menos de 15 caracteres";
+    } else if (!inputs.name) {
+      errors.name = "Se requiere el nombre de la actividad";
+    } else if (inputs.name.length <= 4 || inputs.name.length > 15) {
+      errors.name = "El nombre debe tener entre 3 y 15 caracteres";
     } else if (!letterAndCo.test(inputs.name)) {
-      errors.name = "El name debe tener solo letras";
+      errors.name = "El name debe tener solo letras y números";
     } else if (inputs.difficulty < 1 || inputs.difficulty > 5) {
       errors.difficulty =
         "La dificultad de la actividad debe estar entre 1 y 5";
@@ -76,6 +67,8 @@ const Form = (props) => {
     season: "",
   });
 
+  console.log(error);
+
   function handleChange(event) {
     const property = event.target.name;
     let value = event.target.value;
@@ -97,28 +90,30 @@ const Form = (props) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios
-      .post("http://localhost:3001/activities", form)
-      .then((res) => alert(`Se creo la actividad`))
-      .catch((error) => alert(error));
-
-    if (Object.keys(error).length === 0) {
-      setForm({
-        country: "",
-        name: "",
-        difficulty: 0,
-        duration: 0,
-        season: "",
-      });
-      setError({
-        country: "",
-        name: "",
-        difficulty: "",
-        duration: "",
-        season: "",
-      });
+    
+    if (Object.values(error).every((value) => value === "")) {
+      axios
+        .post("http://localhost:3001/activities", form)
+        .then((res) => {
+          alert(`Se creó la actividad`);
+          setForm({
+            country: "",
+            name: "",
+            difficulty: 0,
+            duration: 0,
+            season: "",
+          });
+          setError({
+            country: "",
+            name: "",
+            difficulty: "",
+            duration: "",
+            season: "",
+          });
+        })
+        .catch((error) => alert(error));
     } else {
-      return alert("Debes corregir/agregar los datos");
+      alert("Debes corregir/agregar los datos");
     }
   }
 
