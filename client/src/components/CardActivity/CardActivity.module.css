@@ -15,6 +15,7 @@
     overflow:hidden;
     background-image: url("../../images/travel-the-world-.jpg");
     background-size:contain;
+    border-radius: 15px 90px 10px
 }
 
 .card img {
