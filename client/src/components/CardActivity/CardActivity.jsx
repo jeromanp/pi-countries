@@ -1,4 +1,5 @@
 import style from "./CardActivity.module.css";
+import {Link}  from "react-router-dom"
 
 const CardActivity = (props) => {
   return (
@@ -11,9 +12,11 @@ const CardActivity = (props) => {
         {props.duration && <p>Duration: {props.duration}</p>}
       
       </div>
+      <Link to={`/detail/${props.id}`}>
       <div className={style.content}>
         {props.flag && <img src={props.flag} alt={props.name} />}       
       </div>
+      </Link>
     </div>
   );
 };
