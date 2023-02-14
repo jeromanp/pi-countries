@@ -1,77 +1,131 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: "Veteran";
-    background-color: rgba(0, 0, 0, 0.316);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Veteran";
+  background-color: rgba(0, 0, 0, 0.316);
+}
 
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3cm;
+  color: rgba(196, 199, 208, 0.763);
+}
+
+.container h2 {
+  font-size: 1.5cm;
+  color: rgba(196, 199, 208, 0.763);
+  /* background-color: rgba(250, 235, 215, 0.285); */
+}
+
+.container button {
+  height: 3em;
+  width: 8em;
+  border: none;
+  border-radius: 10em;
+  background: blue;
+  font-size: 17px;
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.container button:hover {
+  animation: shake3856 0.3s linear infinite both;
+}
+
+.container button:hover {
+  background-color: white;
+  color: blue;
+}
+
+@keyframes shake3856 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
   }
-  
- 
-  .container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 3cm;
-    color:rgba(196, 199, 208, 0.763);
+
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
   }
 
-  .container h2{
-    font-size: 1.5cm;
-    color:rgba(196, 199, 208, 0.763);
-    /* background-color: rgba(250, 235, 215, 0.285); */
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
   }
 
-  .container button {
-    height: 3em;
-    width: 8em;
-    border: none;
-    border-radius: 10em;
-    background: blue;
-    font-size: 17px;
-    color: #ffffff;
-    font-family: inherit;
-    font-weight: 500;
-   }
-   
-   .container button:hover {
-    animation: shake3856 0.3s linear infinite both;
-   }
-
-   .container button:hover {
-    background-color: white;
-    color: blue;
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
   }
 
-   @keyframes shake3856 {
-    0% {
-     -webkit-transform: translate(0);
-     transform: translate(0);
-    }
-   
-    20% {
-     -webkit-transform: translate(-2px, 2px);
-     transform: translate(-2px, 2px);
-    }
-   
-    40% {
-     -webkit-transform: translate(-2px, -2px);
-     transform: translate(-2px, -2px);
-    }
-   
-    60% {
-     -webkit-transform: translate(2px, 2px);
-     transform: translate(2px, 2px);
-    }
-   
-    80% {
-     -webkit-transform: translate(2px, -2px);
-     transform: translate(2px, -2px);
-    }
-   
-    100% {
-     -webkit-transform: translate(0);
-     transform: translate(0);
-    }
-   }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.container {
+  text-align: center;
+}
+
+ h1 {
+  animation: moveInLeft 1s ease-out;
+}
+ h2 {
+  animation: zoomIn 1s ease-out;
+}
+
+.container button {
+  animation: zooIn 1s ease-out;
+}
+
+input {
+  animation: zoomIn 1s ease-in;
+}
+
+select {
+  animation: zoomIn 1s ease-in;
+}
+
+p {
+  animation: zoomIn 1s ease-in-out;
+}
+
+label {
+  animation: zoomIn 1s ease-in-out;
+}
+
