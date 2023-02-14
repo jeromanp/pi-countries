@@ -29,7 +29,12 @@
     margin-bottom: 0px;
     font-size: 30px;
     color:antiquewhite;
+  }
 
+  .container select{
+    text-align: center;
+    margin-left: 35px;
+    
   }
 
   .container div {
@@ -49,6 +54,8 @@
     border-radius: 5px;
     border: 1px solid rgb(204, 204, 204);
     font-size: 15px;
+    width: 90%;
+    margin-left: 10px;
   }
 
   .container button {
@@ -73,12 +80,7 @@
     transform: translate(-75%, -40%);
     font-family: fantasy;
 }
-
-  .warning {
-    border: solid rgb(255, 0, 0) 1px;
-    border-radius: 0.2em;
-  }
-  
+ 
   .danger {
     font-size: 15px;
     color: rgb(255, 0, 0);

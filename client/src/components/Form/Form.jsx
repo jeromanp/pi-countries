@@ -1,9 +1,20 @@
 import style from "./Form.module.css";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getCountries } from "../../redux/actions/actions";
 
 const Form = (props) => {
-   function backtoHome() {
+  const countries = useSelector((state) => state.allCountries);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCountries());
+  }, [dispatch]);
+
+  console.log(countries);
+
+  function backtoHome() {
     return props.history.push("/home");
   }
 
@@ -52,7 +63,7 @@ const Form = (props) => {
     season: "",
   });
 
-  console.log(form)
+  console.log(form);
 
   const [error, setError] = useState({
     country: [],
@@ -108,9 +119,16 @@ const Form = (props) => {
     }
   }
 
+  function handleSelect(e) {
+    setForm({
+      ...form,
+      country: [...form.country, e.target.value],
+    });
+  }
+
   return (
     <div className={style.container}>
-       <div>
+      <div>
         <button onClick={backtoHome}>To Home</button>
         <button onClick={toActivities}>View Activities</button>
       </div>
@@ -121,10 +139,27 @@ const Form = (props) => {
         }}
       >
         <div>
-          <label>Country: </label>
+        <label>Countries: </label>
+          <select 
+            defaultValue={"Default"}
+            
+
+          onChange={(e) => handleSelect(e)} >
+            <option value="Default" disabled>
+              Select Country
+            </option>
+            {countries.map((c) => (
+              <option value={c.id}>
+                {c.id} - {c.name}
+              </option>
+            ))}
+          </select>
+          <hr />
+       
+          {/* <label>Country(es): </label> */}
           <input
             type="text"
-            placeholder="Country IDs, separated by commas"
+            placeholder="Country IDs"
             name="country"
             value={form.country}
             onChange={handleChange}
@@ -150,7 +185,7 @@ const Form = (props) => {
             type="range"
             min="1"
             max="5"
-            step="1"           
+            step="1"
             name="difficulty"
             value={form.difficulty}
             onChange={handleChange}
@@ -174,13 +209,13 @@ const Form = (props) => {
 
         <div>
           <label>Season: </label>
-          <select 
-            name="season" 
-            // value={form.season} 
-            onChange={handleChange} 
+          <select
+            name="season"
+            // value={form.season}
+            onChange={handleChange}
             defaultValue={"Default"}
-            >
-          <option value="Default" disabled>
+          >
+            <option value="Default" disabled>
               Select Season
             </option>
             <option value="Spring">Spring</option>
