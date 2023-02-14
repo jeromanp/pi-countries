@@ -163,6 +163,7 @@ const Form = (props) => {
             name="country"
             value={form.country}
             onChange={handleChange}
+            readOnly
           />
           <p className={style.danger}>{error.country}</p>
         </div>
@@ -175,6 +176,7 @@ const Form = (props) => {
             name="name"
             value={form.name}
             onChange={handleChange}
+           
           />
           <p className={style.danger}>{error.name}</p>
         </div>
