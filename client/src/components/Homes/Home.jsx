@@ -43,6 +43,13 @@ const Home = () => {
       <nav className={style.navbar}>
         <SearchCountry />
       </nav>
+      <div>
+        <Paginado
+          charactersPerPage={charactersPerPage}
+          countries={countries.length}
+          paginado={paginado}
+        />
+      </div>
 
       {currentCharacters?.map((c) => {
         return (
@@ -58,16 +65,6 @@ const Home = () => {
           />
         );
       })}
-
-      <div>
-        <footer>
-          <Paginado
-            charactersPerPage={charactersPerPage}
-            countries={countries.length}
-            paginado={paginado}
-          />
-        </footer>
-      </div>
     </div>
   );
 };
