@@ -52,48 +52,6 @@ const findActivity = async (name) => {
   return results;
 };
 
-const getActivityById = async (id) => {  
-  if(isNaN(id)){
-    throw Error(`El ${id} no es un numero`)
-}
-  const findActivity = await Activity.findByPk(id);
-  if(!findActivity){
-    throw Error(`No se encontró la actividad con ID ${id}`)
-  }
-  return findActivity;
-};
-
-
-
-const updateActivity = async (id,country, name, difficulty, duration, season) => {
-  await Activity.update(
-    {
-      country:country,
-      name: name,
-      difficulty: difficulty,
-      duration: duration,
-      season: season,
-    },
-    {
-      where: {
-        id: id,
-      },
-    }
-  );
-  const updatedActivity = await Activity.findByPk(id);
-  return updatedActivity;
-};
-
-
-const deleteActivity = async (id) => {
-  
-  const deleteAct = await Activity.findByPk(id);
-  if (!deleteAct) {
-    throw new Error(`No se encontró la actividad con ID ${id}`);
-  }
-  await deleteAct.destroy();
-  return deleteAct;
-};
 
 module.exports = {
   createActivity,
