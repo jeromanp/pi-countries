@@ -24,7 +24,7 @@ const createActivityHandler = async (req, res) => {
     );
     res.status(201).json(newActivity);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    // res.status(400).json({ error: "datos no oK" });
   }
 };
 

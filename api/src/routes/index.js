@@ -31,22 +31,6 @@ const showApiValues = (array) => {
   });
 };
 
-// let dataFetched = false;
-// //se busca que se ejecute una sola vez
-// const getDataApi = async () => {
-//   try {
-//     if (!dataFetched) {
-//       const dataApi = (await axios.get(url)).data;
-//       await Country.bulkCreate(showApiValues(dataApi));
-//       dataFetched = true;
-//       return dataApi;
-//     }
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
-// getDataApi()
-
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 router.use("/countries", countriesRouter);
