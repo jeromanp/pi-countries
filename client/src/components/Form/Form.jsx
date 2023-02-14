@@ -149,7 +149,7 @@ const Form = (props) => {
               Select Country
             </option>
             {countries.map((c) => (
-              <option value={c.id}>
+              <option value={c.id} key={c.id}>
                 {c.id} - {c.name}
               </option>
             ))}
