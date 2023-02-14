@@ -49,7 +49,5 @@ const getActivityHandler = async (req, res) => {
 module.exports = {
   createActivityHandler,
   getActivityHandler,
-  getActivityByIdHandler,
-  updateActivityHandler,
-  deleteActivityHandler,
+ 
 };

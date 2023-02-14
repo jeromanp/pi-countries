@@ -57,7 +57,5 @@ module.exports = {
   createActivity,
   getActivity,
   findActivity,
-  getActivityById,
-  updateActivity,
-  deleteActivity,
+ 
 };
