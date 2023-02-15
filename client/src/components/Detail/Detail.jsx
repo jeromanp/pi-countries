@@ -33,11 +33,17 @@ const Detail = (props) => {
             <img src={country.flag} alt={country.name} />
             <p>ID: {country.id}</p>
             <p>Name: {country.name}</p>
-            <p>:Continent {country.continent}</p>
+            <p>Continent {country.continent}</p>
             <p>Capital: {country.capital}</p>
             <p>Subregion: {country.subregion}</p>
             <p>Area: {country.area}</p>
             <p>Population: {country.population}</p>
+            <p>Latitude: {country.latitude}</p>
+            <p>Timezones: {country.timezones}</p>
+            <div className={style.m}>
+            <p>Map: </p><a href={country.map} target="_blank" rel="noreferrer"><img src="https://img.freepik.com/vector-gratis/mapa-elementos-viaje-dibujado-mano_23-2147837406.jpg?w=2000" alt="globo terraqueo"/></a>
+              
+            </div>
           </div>
         </div>
       ) : (

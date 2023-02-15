@@ -47,3 +47,11 @@
   .text p {
     margin: 0px 0px 10px 0px;
   }
+
+  .m img{
+    width: 70px;
+    height:60px;
+    /* flex-direction: row; */
+  transform: translate(0%, -50%);
+
+  }
