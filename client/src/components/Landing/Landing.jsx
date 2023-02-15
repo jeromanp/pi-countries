@@ -10,7 +10,7 @@ const Landindg = (props) => {
         <div className={style.container}>
             <h1>P.I. COUNTRIES</h1>
             <h2>Click to start</h2>
-            <button onClick={toHome}>Iniciar</button>
+            <button onClick={toHome}>Go</button>
         </div>
     )
 }
