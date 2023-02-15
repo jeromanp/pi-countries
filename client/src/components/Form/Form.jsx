@@ -162,7 +162,7 @@ const Form = (props) => {
             name="country"
             value={form.country}
             onChange={handleChange}
-            readOnly
+            // readOnly
           />
           <p className={style.danger}>{error.country}</p>
         </div>
