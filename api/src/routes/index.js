@@ -28,7 +28,7 @@ const showApiValues = (array) => {
       population: element.population,
       latitude:element.latlng,
       timezones:element.timezones,
-      map:element.maps.openStreetMaps,
+      map:element.maps.googleMaps,
     };
   });
 };
