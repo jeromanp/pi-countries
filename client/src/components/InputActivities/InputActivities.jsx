@@ -8,7 +8,7 @@ const InputActivities = () => {
   const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState("Default");
 
-  console.log(activity);
+  // console.log(activity);
  
   function handleSelect(event) {
     const { value } = event.target;
@@ -23,7 +23,6 @@ const InputActivities = () => {
         value={selectedValue}
         onChange={(e) => {
           handleSelect(e);
-          // filterByActivity(e);
         }}
       >
         <option value="Default" disabled>

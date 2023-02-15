@@ -18,7 +18,7 @@ const About = (props) => {
             Bootcamp de Henry.
           </p>
           <p>
-            Este pequeño proyecto cuenta con librerías como React, Redux para el
+            Este proyecto cuenta con librerías como React, Redux para el
             FronEnd; Express y Sequelize con Postgres para el BackEnd
           </p>
           <p>Contacto:</p>

@@ -1,23 +1,10 @@
-import { useEffect, useState } from "react";
 import style from "./Paginado.module.css";
-// import { useEffect } from "react
-import Loading from "../Loading/Loading";
 
 const Paginado = ({ charactersPerPage, countries, paginado }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(countries / charactersPerPage); i++) {
     pageNumbers.push(i);
-  }
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
-  if (loading) {
-    return <Loading />;
   }
 
   return (

@@ -5,14 +5,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { getCountries } from "../../redux/actions/actions";
 
 const Form = (props) => {
+  //solicitar todos los countries para el select
   const countries = useSelector((state) => state.allCountries);
   const dispatch = useDispatch();
 
+  //obtener los datos cuando se inicie el compoennete
   useEffect(() => {
     dispatch(getCountries());
   }, [dispatch]);
 
-  console.log(countries);
+  // console.log(countries);
 
   function backtoHome() {
     return props.history.push("/home");
@@ -21,7 +23,7 @@ const Form = (props) => {
   function toActivities() {
     return props.history.push("/getactivities");
   }
-  ////////////////
+  ////////////////FUNCION VALIDADORA /////////////////////
 
   function validate(inputs) {
     const errors = {};
@@ -47,8 +49,9 @@ const Form = (props) => {
     }
     return errors;
   }
-  ///////////////
+  /////////////////////////////////////////////////////////////////////////
 
+  //estado del formulario
   const [form, setForm] = useState({
     country: [],
     name: "",
@@ -57,8 +60,9 @@ const Form = (props) => {
     season: "",
   });
 
-  console.log(form);
+  // console.log(form);
 
+  //estado de los errores del formulario
   const [error, setError] = useState({
     country: [],
     name: "",
@@ -67,7 +71,8 @@ const Form = (props) => {
     season: "",
   });
 
-  console.log(error);
+  // console.log(error);
+
 
   function handleChange(event) {
     const property = event.target.name;
@@ -79,7 +84,7 @@ const Form = (props) => {
       ...form,
       [property]: value,
     });
-
+    //valida que no haya errores
     setError(
       validate({
         ...form,
@@ -90,7 +95,7 @@ const Form = (props) => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    
+    //valida que el objeto no tenga errores
     if (Object.values(error).every((value) => value === "")) {
       axios
         .post("http://localhost:3001/activities", form)
@@ -117,6 +122,7 @@ const Form = (props) => {
     }
   }
 
+  //funcion para el select de countries
   function handleSelect(e) {
     setForm({
       ...form,
@@ -150,7 +156,6 @@ const Form = (props) => {
           </select>
           <hr />
 
-          {/* <label>Country(es): </label> */}
           <input
             type="text"
             placeholder="Country IDs"

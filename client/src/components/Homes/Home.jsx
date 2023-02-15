@@ -9,6 +9,7 @@ import Loading from "../Loading/Loading";
 
 const Home = () => {
   const dispatch = useDispatch();
+  //solicita countries
   const countries = useSelector((state) => state.countries);
 
   //guardar en un estado local y setee el estado y lo inicie en 1
@@ -23,12 +24,14 @@ const Home = () => {
     indexOfLastCharacter
   );
 
+  //para componenete load
   const [loading, setLoading] = useState(true);
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
+  //se monta el componente y se ejecuta para trabajar con los datos
   useEffect(() => {
     dispatch(getCountries());
     setLoading(false);
@@ -41,6 +44,7 @@ const Home = () => {
   return (
     <div className={style.container}>
       <nav className={style.navbar}>
+        {/* componenete para search y select de busqueda de countries */}
         <SearchCountry />
       </nav>
       <div>

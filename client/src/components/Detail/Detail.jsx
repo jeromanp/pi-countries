@@ -9,14 +9,16 @@ import Loading from "../Loading/Loading";
 const Detail = (props) => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  //obtener los countries
   const country = useSelector((state) => state.country);
 
-  console.log(country);
+  // console.log(country);
 
   function backtoHome() {
     return props.history.push("/home");
   }
 
+  //cuando se monte el componenete se solicitan los datos para trabajar con ellos
   useEffect(() => {
     dispatch(getCountry(id));
   }, [dispatch, id]);

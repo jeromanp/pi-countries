@@ -1,5 +1,5 @@
 import style from "./SearchCountry.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -13,6 +13,7 @@ import {
 
 const SearchCountry = () => {
   const dispatch = useDispatch();
+  //setear el input a ""
   const [searchName, setSearchName] = useState("");
 
   const handleInputSearchCountry = (e) => {
@@ -44,10 +45,6 @@ const SearchCountry = () => {
   const handleClickAll = () => {
     dispatch(getAllActivity());
   };
-
-  useEffect(() => {
-    dispatch(getAllActivity());
-  }, [dispatch]);
 
   return (
     <div>

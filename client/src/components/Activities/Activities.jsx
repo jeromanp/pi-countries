@@ -7,12 +7,15 @@ import Loading from "../Loading/Loading";
 import InputActivities from "../InputActivities/InputActivities";
 
 const Activities = (props) => {
+  //obtener las actividades
   const activity = useSelector((state) => state.filter);
   const dispatch = useDispatch();
+  //mostrar Load mientras carga
   const [loading, setLoading] = useState(true);
 
   console.log(activity);
 
+  //cuando se monte el compoenete, se hace la solicitud para tener los datos a disposicion
   useEffect(() => {
     dispatch(getAllActivity());
     setLoading(false);
