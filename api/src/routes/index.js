@@ -26,7 +26,9 @@ const showApiValues = (array) => {
       subregion: element.subregion,
       area: element.area,
       population: element.population,
-      created: false,
+      latitude:element.latlng,
+      timezones:element.timezones,
+      map:element.maps.openStreetMaps,
     };
   });
 };
