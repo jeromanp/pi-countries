@@ -38,7 +38,7 @@ const Detail = (props) => {
             <p>Continent {country.continent}</p>
             <p>Capital: {country.capital}</p>
             <p>Subregion: {country.subregion}</p>
-            <p>Area: {country.area} m<sup>2</sup>  </p>
+            <p>Area: {country.area} km<sup>2</sup>  </p>
             <p>Population: {country.population} aproximate</p>
             <p>Latitude: {country.latitude}</p>
             <p>Timezones: {country.timezones}</p>
