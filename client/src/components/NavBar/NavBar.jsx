@@ -7,7 +7,7 @@ const NavBar = () => {
         <div className={style.mainContainer}>
             <nav className={style.navbar}>                
             <Link to="/home">Home</Link>
-            <Link to="/activities">Creat Activity</Link>
+            <Link to="/activities">Create Activity</Link>
             <Link to="/about">About</Link>
             <Link to="/">Exit</Link>
             </nav>
