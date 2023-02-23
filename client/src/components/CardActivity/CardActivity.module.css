@@ -1,73 +1,72 @@
-.card{
-    border: 1px solid black;
-    width: 300px;
-    height: 210px;
-    border-radius: 15px;
-    display:inline-block;
-    justify-content: center;
-    margin: 1%;
-    align-items: flex-start;
-    justify-content: center;
-    justify-content: space-between; 
-    background-color: rgba(0, 0, 0, 0.534);
-    font-family: "Sansation_Light";
-    color:rgb(6, 17, 165);
-    overflow:hidden;
-    background-image: url("../../images/travel-the-world-.jpg");
-    background-size:contain;
-    border-radius: 15px 90px 10px
+.card {
+  border: 3px solid black;
+  width: 200px;
+  height: 230px;
+  border-radius: 15px;
+  display: inline-block;
+  justify-content: center;
+  margin: 1%;
+  align-items: flex-start;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.534);
+  font-family: "Sansation_Light";
+  color: rgb(0, 1, 6);
+  overflow: hidden;
+  background-image: url("../../images/form.avif");
+  background-size: contain;
+  border-radius: 15px 70px 10px;
 }
 
 .card img {
-    width: 150px;
-    height:100px;
-    margin: auto;
-    margin-left: auto;
-    align-items:stretch;
-    padding-top: 10px;
-    padding-left: 0px;
-    transform: translate(80%, -200%);
-
-    }
-
-.text{
-    direction: ltr;
-    align-items: center;
-    justify-content: center;
-    size: 20px;
-    font-size: medium;
-    justify-items: center;
-    transform: translate(0%, 0%);
-    overflow:hidden;
-    padding: 15px;
-    font-weight: bold;
+  width: 150px;
+  height: 100px;
+  margin: auto;
+  margin-left: auto;
+  align-items: stretch;
+  padding-top: 10px;
+  padding-left: 0px;
+  transform: translate(80%, -200%);
 }
 
-.content{
-    font-size: small;
-    padding: 15px;
+.text {
+  direction: ltr;
+  align-items: center;
+  justify-content: center;
+  size: 20px;
+  font-size: medium;
+  justify-items: center;
+  transform: translate(0%, 0%);
+  overflow: hidden;
+  padding: 15px;
+  font-weight: bold;
 }
 
-.content img{
-width: 150px;
+.content {
+  font-size: small;
+  padding: 15px;
+}
+
+.content img {
+  width: 150px;
   height: 90px;
   margin: auto;
   margin-left: auto;
   align-items: stretch;
   padding-top: 10px;
   padding-left: 0px;
-  transform: translate(80%, -50%);
+  transform: translate(10%, -60%);
   object-fit: cover;
 }
 
-.icono{
-    align-items: center;
-    /* transform: translate(10%, -25%); */
+.icono {
+  align-items: center;
+  /* transform: translate(10%, -25%); */
 }
 
-.container img:hover{
-    cursor: pointer;
+.container img:hover {
+  cursor: pointer;
 }
-.card:hover{
-    background-color: rgba(0, 0, 0, 0.723);
-    }
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.723);
+}

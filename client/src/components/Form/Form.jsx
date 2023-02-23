@@ -34,8 +34,8 @@ const Form = (props) => {
       errors.country = "Se requiere al menos un country";
     } else if (!inputs.name) {
       errors.name = "Se requiere el nombre de la actividad";
-    } else if (inputs.name.length <= 3 || inputs.name.length > 15) {
-      errors.name = "El nombre debe tener entre 4 y 15 caracteres";
+    } else if (inputs.name.length <= 2 || inputs.name.length > 15) {
+      errors.name = "El nombre debe tener entre 3 y 15 caracteres";
     } else if (!letterAndCo.test(inputs.name)) {
       errors.name = "El name debe tener solo letras y números";
     } else if (inputs.difficulty < 1 || inputs.difficulty > 5) {

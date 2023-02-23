@@ -26,8 +26,14 @@
     width: 250px;
     height: 200px;
     margin-bottom: 20px;
-  }
-  
+    /* transition: transform 0.3s ease; */
+   }
+
+   /* img:hover {
+    transform: scale(1.2);
+  } */
+
+
   .container button {
     background-color: blue;
     color: white;
@@ -37,6 +43,7 @@
     cursor: pointer;
     margin-bottom: 0px;
     margin-top: 20px;
+
   }
 
   .container button:hover {

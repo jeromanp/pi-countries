@@ -1,11 +1,13 @@
 .container {
     text-align: justify;
+    /* alinear cards */
     padding-left: 18%;
 }
 
 .container h1{
     color: aliceblue;
     font-size: medium;
+    /* del nav de busqueda */
     padding-left: 25%;
     
 }
@@ -13,11 +15,12 @@
 .navbar {
     background-color: rgba(6, 6, 7, 0.726);
     color: #fff;
+    /* tamaño del searchcountry */
     width: 200px;
     height: 100%;
     position: fixed;
     left: 0;
-    top: 20px;
+    top: 62px;
     z-index: 2;
 }
 

@@ -14,13 +14,15 @@ const About = (props) => {
         <div className={style.conta}>
           <h1>Sobre el proyecto Countries</h1>
           <p>
-            Proyecto Final Individual para aprobar el primer módulo de Labs del
+            Proyecto Individual para aprobar el primer módulo de Labs del
             Bootcamp de Henry.
           </p>
+          <p>La información utilizada en este proyecto se puede encontrar en el sitio web:<a href="https://restcountries.com/v3/all" target="_blank" rel="noreferrer">https://restcountries.com/v3/all</a>, donde los datos fueron filtrados, extraídos y manejados desde una BD local con la que se muestra la información de los 250 países.</p>
           <p>
-            Este proyecto cuenta con librerías como React, Redux para el
-            FronEnd; Express y Sequelize con Postgres para el BackEnd
+            Este proyecto se creo desde cero en base a la consignas del readme solicitada por Henry y principalmente se trabajan con librerías como React, Redux para el diseño del 
+            FronEed; Express y Sequelize con Postgres para el Backend junto con la DB.
           </p>
+          
           <p>Contacto:</p>
 
           <ul>

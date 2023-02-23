@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 82px;
+    padding: 30px 100px;
     font-family: "Veteran";
     font-size: larger;
     color:antiquewhite;
@@ -12,7 +12,7 @@
   a {
     color:antiquewhite;
     text-decoration: none;
-    margin: 5px 120px;
+    margin: 0px 130px;
   }
 
   a:hover {

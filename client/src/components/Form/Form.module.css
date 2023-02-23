@@ -1,7 +1,7 @@
 .container{
   display: flex;
     flex-direction: column;
-    margin-bottom: -5px;
+    /* margin-bottom: 505px; */
 }
 
 
@@ -10,16 +10,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 450px;
     margin: 20px auto;
     padding: 5px;
     border: 3px solid #ccc;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.641);
-    background-image: url("../../images//travel-the-world-.jpg");
+    border-radius: 20px;
+    /* background-color: rgba(0, 0, 0, 0.641);   */
+    background-image: url("../../images/form.avif");
     background-size: contain;
     background-position: center;
-    color:antiquewhite;
+    color:rgb(3, 1, 0);
     flex-direction: column;
 
   }
@@ -34,7 +34,7 @@
   .container select{
     text-align: center;
     margin-left: 35px;
-    background-color: rgb(31, 146, 222);
+    background-color: rgb(16, 79, 121);
     color:aliceblue;
   }
 
@@ -47,7 +47,7 @@
   .container label {
     font-weight: bold;
     margin-bottom: 0px;
-    background-color: rgba(69, 69, 131, 0.364);
+    /* background-color: rgba(69, 69, 131, 0.364); */
   }
 
   .container input {
@@ -57,8 +57,8 @@
     font-size: 15px;
     width: 90%;
     margin-left: 10px;
-    background-color: rgb(31, 146, 222);
-    color:rgb(0, 1, 1);
+    background-color: rgb(16, 79, 121);
+    color:rgb(226, 237, 237);
   }
 
   .container input::placeholder {
@@ -84,7 +84,7 @@
     flex-direction: row;
     width: 100%;
     flex-grow: 1;
-    transform: translate(-75%, -40%);
+    transform: translate(-55%, 0%);
     font-family: fantasy;
 }
  

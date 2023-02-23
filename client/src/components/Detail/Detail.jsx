@@ -31,7 +31,7 @@ const Detail = (props) => {
       {country ? (
         <div>
           <div className={style.text}>
-            <h1>Country Detail</h1>
+            <h1>Country Detail of: {country.name}</h1>
             <img src={country.flag} alt={country.name} />
             <p>ID: {country.id}</p>
             <p>Name: {country.name}</p>
