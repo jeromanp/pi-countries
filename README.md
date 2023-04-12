@@ -2,6 +2,7 @@
 
 # Proyecto Individual - Henry Countries
 
+Este proyecto es uno de los cinco displonibles para que cada alumno pueda desarrollar su propia version de PI, si que estos sean los mismos.
 <p align="left">
   <img height="200" src="./countries.png" />
 </p>
