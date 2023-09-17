@@ -94,11 +94,13 @@ const Form = (props) => {
   }
 
   function handleSubmit(event) {
+  const back=process.env.BACKEND
+
     event.preventDefault();
     //valida que el objeto no tenga errores
     if (Object.values(error).every((value) => value === "")) {
       axios
-        .post("http://localhost:3001/activities", form)
+        .post(`${back}/activities`, form)
         .then((res) => {
           alert(`Se creó la actividad`);
           setForm({

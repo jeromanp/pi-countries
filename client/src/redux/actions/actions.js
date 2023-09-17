@@ -12,8 +12,9 @@ import {
 } from "./type_actions";
 
 export function getCountries() {
+  const back="https://pi-countries-ebki.onrender.com"
   return async function (dispatch) {
-    const apiData = await axios.get("http://localhost:3001/countries");
+    const apiData = await axios.get(`${back}/countries`);
     //const apiData = await axios.get("https://jsonplaceholder.typicode.com/users")
     //para ver si trabaja bien redux
     const countries = apiData.data;
@@ -26,8 +27,10 @@ export function getCountries() {
 }
 
 export function getCountry(id) {
+  const back="https://pi-countries-ebki.onrender.com"
+
   return async function (dispatch) {
-    const apiData = await axios.get(`http://localhost:3001/countries/${id}`);
+    const apiData = await axios.get(`${back}/countries/${id}`);
     const country = apiData.data;
     dispatch({
       type: GET_COUNTRY,
@@ -37,10 +40,12 @@ export function getCountry(id) {
 }
 
 export function searchCountry(name) {
+  const back="https://pi-countries-ebki.onrender.com"
+
   return async function (dispatch) {
     try {
       const apiData = await axios.get(
-        `http://localhost:3001/countries?name=${name}`
+        `${back}/countries?name=${name}`
       );
       const search = apiData.data;
       console.log(search);
@@ -50,6 +55,7 @@ export function searchCountry(name) {
       });
     } catch (error) {
       alert(error.response.data.error);
+      
     }
   };
 }
@@ -82,9 +88,11 @@ export function orderPopulation(orderAlpha) {
 }
 
 export function getAllActivity() {
+  const back="https://pi-countries-ebki.onrender.com"
+
   return async function (dispatch) {
     try {
-      const apiData = await axios.get("http://localhost:3001/activities");
+      const apiData = await axios.get(`${back}/activities`);
       const result = apiData.data;
       //me trae el array de Actividades con Countries
       // console.log(result);
@@ -99,10 +107,12 @@ export function getAllActivity() {
 }
 
 export function filterByActivity(name) {
+  const back="https://pi-countries-ebki.onrender.com"
+
   return async function (dispatch) {
     try {
       const apiData = await axios.get(
-        `http://localhost:3001/activities?name=${name}`
+        `${back}/activities?name=${name}`
       );
       const search = apiData.data;
       //me trae las propiedades segun la busqueda
