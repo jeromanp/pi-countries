@@ -1,16 +1,16 @@
 {
-  "name": "api",
+  "name": "countries",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L",
+    "start":  "node index.js",
     "test": "mocha -w ./tests/**/*.spec.js"
   },
-  "author": "Henry",
+  "author": "Jose Eduardo Roman",
   "license": "ISC",
   "engines": {
-    "node": ">=12.18.3",
+    "node": ">=14 <16",
     "npm": ">=6.14.6"
   },
   "dependencies": {
@@ -23,7 +23,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
     "sequelize": "^6.3.5"
-  },
+  },  
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
