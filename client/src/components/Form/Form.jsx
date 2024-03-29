@@ -94,7 +94,7 @@ const Form = (props) => {
   }
 
   function handleSubmit(event) {
-  const back=process.env.BACKEND
+    const back="https://pi-countries-ebki.onrender.com"
 
     event.preventDefault();
     //valida que el objeto no tenga errores
