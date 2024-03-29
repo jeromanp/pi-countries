@@ -7,7 +7,7 @@ const {sequelize} = require ("../db")
 const getAllCountries = async () => {
   return await Country.findAll({
     
-    attributes: ['id','name', 'continent', 'flag', 'capital','subregion', 'area', 'population'],    
+    attributes: ['id','name', 'continent', 'flag', 'capital','subregion', 'area', 'population', "latitude", "map", "timezones"],    
   });
 };
 
