@@ -24,8 +24,11 @@ const Home = () => {
     indexOfLastCharacter
   );
 
+  console.log(countries);
+  // console.log(currentCharacters);
+
   //para componenete load
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const paginado = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -33,13 +36,15 @@ const Home = () => {
 
   //se monta el componente y se ejecuta para trabajar con los datos
   useEffect(() => {
-    dispatch(getCountries());
-    setLoading(false);
+    try {
+      setLoading(true);
+      dispatch(getCountries());
+    } catch (error) {
+      alert(error);
+    } finally {
+      setLoading(false);
+    }
   }, [dispatch]);
-
-  if (loading) {
-    return <Loading />;
-  }
 
   return (
     <div className={style.container}>
@@ -55,8 +60,10 @@ const Home = () => {
         />
       </div>
 
-      {currentCharacters?.map((c) => {
-        return (
+      {loading ? (
+        <Loading />
+      ) : (
+        currentCharacters?.map((c) => (
           <Card
             key={c.id}
             id={c.id}
@@ -67,8 +74,8 @@ const Home = () => {
             duration={c.duration}
             season={c.season}
           />
-        );
-      })}
+        ))
+      )}
     </div>
   );
 };
