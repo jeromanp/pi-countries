@@ -4,13 +4,14 @@ const Loading = () => {
   return (
     <div className={style.container}>
       <div className={style.spinner}>
-        <span>L</span>
-        <span>O</span>
+        <span>C</span>
         <span>A</span>
-        <span>D</span>
-        <span>I</span>
-        <span>N</span>
+        <span>R</span>
         <span>G</span>
+        <span>A</span>
+        <span>N</span>
+        <span>D</span>
+        <span>O</span>
         <span>.</span>
         <span>.</span>
         <span>.</span>
