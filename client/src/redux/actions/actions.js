@@ -12,8 +12,8 @@ import {
 } from "./type_actions";
 
 export function getCountries() {
-  const back="https://pi-countries-ebki.onrender.com"
-  // const back = "http://localhost:3001/"
+  const back="https://backend-pi-countries-tol3.onrender.com"
+  // const back = "http://localhost:3001"
   return async function (dispatch) {
     const apiData = await axios.get(`${back}/countries`);
     //const apiData = await axios.get("https://jsonplaceholder.typicode.com/users")
@@ -28,8 +28,8 @@ export function getCountries() {
 }
 
 export function getCountry(id) {
-  const back="https://pi-countries-ebki.onrender.com"
-  // const back = "http://localhost:3001/"
+  const back="https://backend-pi-countries-tol3.onrender.com"
+  // const back = "http://localhost:3001"
 
 
   return async function (dispatch) {
@@ -43,8 +43,8 @@ export function getCountry(id) {
 }
 
 export function searchCountry(name) {
-  const back="https://pi-countries-ebki.onrender.com"
-  // const back = "http://localhost:3001/"
+  const back="https://backend-pi-countries-tol3.onrender.com"
+  // const back = "http://localhost:3001"
 
 
   return async function (dispatch) {
@@ -93,8 +93,8 @@ export function orderPopulation(orderAlpha) {
 }
 
 export function getAllActivity() {
-  const back="https://pi-countries-ebki.onrender.com"
-  // const back = "http://localhost:3001/"
+  const back="https://backend-pi-countries-tol3.onrender.com"
+  // const back = "http://localhost:3001"
 
 
   return async function (dispatch) {
@@ -114,8 +114,8 @@ export function getAllActivity() {
 }
 
 export function filterByActivity(name) {
-  const back="https://pi-countries-ebki.onrender.com"
-  // const back = "http://localhost:3001/"  
+  const back="https://backend-pi-countries-tol3.onrender.com"
+  // const back = "http://localhost:3001"  
 
 
   return async function (dispatch) {
