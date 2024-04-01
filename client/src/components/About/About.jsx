@@ -17,10 +17,10 @@ const About = (props) => {
             Proyecto Individual para aprobar el primer módulo de Labs del
             Bootcamp de Henry.
           </p>
-          <p>La información utilizada en este proyecto se puede encontrar en el sitio web:<a href="https://restcountries.com/v3/all" target="_blank" rel="noreferrer">https://restcountries.com/v3/all</a>, donde los datos fueron filtrados, extraídos y manejados desde una BD local con la que se muestra la información de los 250 países.</p>
+          <p>La información utilizada en este proyecto se puede encontrar en la API:<a href="https://restcountries.com/v3/all" target="_blank" rel="noreferrer">https://restcountries.com/v3/all</a>, donde los datos se almacenan una BD instanciada en <a href="https://render.com/" target="_blank" rel="noreferrer">Render</a>y a partir de ahi son tratados de acuerdo a los filtros establecidos con la que se muestra la información de los 250 países. EL deploy se realiza en <a href="https://vercel.com/" target="_blank" rel="noreferrer">Vercel</a></p>
           <p>
             Este proyecto se creo desde cero en base a la consignas del readme solicitada por Henry y principalmente se trabajan con librerías como React, Redux para el diseño del 
-            FronEed; Express y Sequelize con Postgres para el Backend junto con la DB.
+            FronEnd; Express y Sequelize con PostgreSQL para el Backend junto con la DB.
           </p>
           
           <p>Contacto:</p>
